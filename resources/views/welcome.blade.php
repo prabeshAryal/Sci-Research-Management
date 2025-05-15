@@ -16,7 +16,8 @@
             align-items: center;
             min-height: 100vh;
             padding: 1rem;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Keep this */
+            /* overflow-y will be managed by JS when modal is open/closed */
         }
         .container {
             max-width: 95%;
@@ -151,12 +152,28 @@
             gap: 0.1rem; /* Reduced gap */
             width: 100%;
         }
-        #element-info-container{
-            transform: perspective(800px) rotateX(10deg);
+        /* MODIFIED: Styles for element-info-container as an overlay */
+        #element-info-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(10, 10, 20, 0.85); /* Backdrop color */
+            z-index: 100; /* Ensure it's on top */
+            display: none; /* Initially hidden, controlled by JS */
+            align-items: center; /* Vertically center the info card */
+            justify-content: center; /* Horizontally center the info card */
+            padding: 1rem; /* Padding around the info card */
+            overflow-y: auto; /* Allow scrolling if info card is too tall */
+            /* Removed: transform: perspective(800px) rotateX(10deg); */
+            /* Removed: relative, z-10, mt-8 md:mt-16 from Tailwind classes effectively */
         }
         .blurred {
             filter: blur(5px);
             opacity: 0.3;
+            pointer-events: none; /* Prevent interaction with blurred content */
+            transition: filter 0.3s ease, opacity 0.3s ease;
         }
         /* Empty cells for the gap in the main table */
         #periodic-table-container div:nth-child(57), /* La position */
@@ -174,9 +191,9 @@
         #periodic-table-container div:nth-child(69),
         #periodic-table-container div:nth-child(70),
         #periodic-table-container div:nth-child(71) {
-            /* These are empty cells, for the gap in the lanthanides and actinides series */
-            background-color: transparent;
-            border: none;
+            background-color: transparent !important; /* Ensure override */
+            border: none !important; /* Ensure override */
+            pointer-events: none;
         }
         #periodic-table-container div:nth-child(91), /* Ac position */
         #periodic-table-container div:nth-child(92),
@@ -193,9 +210,9 @@
         #periodic-table-container div:nth-child(103),
         #periodic-table-container div:nth-child(104),
         #periodic-table-container div:nth-child(105) {
-            /* These are empty cells, for the gap in the lanthanides and actinides series */
-            background-color: transparent;
-            border: none;
+            background-color: transparent !important; /* Ensure override */
+            border: none !important; /* Ensure override */
+            pointer-events: none;
         }
         .lanthanide-row {
             grid-column: 3 / 16; /* Span columns 3 to 15 */
@@ -221,17 +238,24 @@
         </div>
 
         <div id="periodic-table-container" class="w-full overflow-auto mb-8 z-0 transform transition duration-500 ease-in-out">
+            <!-- Elements will be populated here by JS -->
         </div>
-        <div class="flex justify-center">
+        <!-- ADDED IDs to wrapper divs -->
+        <div id="lanthanide-row-wrapper" class="flex justify-center">
             <div class="lanthanide-row">
+                <!-- Lanthanides will be populated here by JS -->
             </div>
         </div>
-        <div class="flex justify-center">
+        <div id="actinide-row-wrapper" class="flex justify-center">
             <div class="actinide-row">
+                <!-- Actinides will be populated here by JS -->
             </div>
         </div>
 
-        <div id="element-info-container" class="relative z-10 flex flex-col md:flex-row gap-6 md:gap-8 items-stretch justify-center w-full mt-8 md:mt-16">
+        <!-- This container is now a full-screen overlay, initially hidden -->
+        <!-- Removed Tailwind classes for positioning like relative, z-10, mt-8, etc. as CSS handles it -->
+        <div id="element-info-container">
+            <!-- Element info card will be populated here by JS -->
         </div>
     </div>
     <script>
@@ -292,8 +316,8 @@
             { number: 54, symbol: 'Xe', name: 'Xenon', atomicMass: 131.29, category: 'Noble Gas', meltingPoint: -111.8, boilingPoint: -108.09, group: 18, period: 5 },
             { number: 55, symbol: 'Cs', name: 'Cesium', atomicMass: 132.91, category: 'Alkali Metal', meltingPoint: 28.44, boilingPoint: 671, group: 1, period: 6 },
             { number: 56, symbol: 'Ba', name: 'Barium', atomicMass: 137.33, category: 'Alkaline Earth Metal', meltingPoint: 727, boilingPoint: 1897, group: 2, period: 6 },
-            { number: 57, symbol: 'La', name: 'Lanthanum', atomicMass: 138.91, category: 'Lanthanide', meltingPoint: 920, boilingPoint: 3454, group: 3, period: 6 },
-            { number: 58, symbol: 'Ce', name: 'Cerium', atomicMass: 140.12, category: 'Lanthanide', meltingPoint: 799, boilingPoint: 3443, group: -1, period: 9 },
+            { number: 57, symbol: 'La', name: 'Lanthanum', atomicMass: 138.91, category: 'Lanthanide', meltingPoint: 920, boilingPoint: 3454, group: 3, period: 6 }, // Group 3, Period 6 for main table placeholder
+            { number: 58, symbol: 'Ce', name: 'Cerium', atomicMass: 140.12, category: 'Lanthanide', meltingPoint: 799, boilingPoint: 3443, group: -1, period: 9 }, // period 9 for lanthanide row
             { number: 59, symbol: 'Pr', name: 'Praseodymium', atomicMass: 140.91, category: 'Lanthanide', meltingPoint: 935, boilingPoint: 3563, group: -1, period: 9 },
             { number: 60, symbol: 'Nd', name: 'Neodymium', atomicMass: 144.24, category: 'Lanthanide', meltingPoint: 1024, boilingPoint: 3074, group: -1, period: 9 },
             { number: 61, symbol: 'Pm', name: 'Promethium', atomicMass: 145, category: 'Lanthanide', meltingPoint: 1045, boilingPoint: 3000, group: -1, period: 9 },
@@ -306,7 +330,7 @@
             { number: 68, symbol: 'Er', name: 'Erbium', atomicMass: 167.26, category: 'Lanthanide', meltingPoint: 1529, boilingPoint: 2868, group: -1, period: 9 },
             { number: 69, symbol: 'Tm', name: 'Thulium', atomicMass: 168.93, category: 'Lanthanide', meltingPoint: 1545, boilingPoint: 1950, group: -1, period: 9 },
             { number: 70, symbol: 'Yb', name: 'Ytterbium', atomicMass: 173.05, category: 'Lanthanide', meltingPoint: 824, boilingPoint: 1196, group: -1, period: 9 },
-            { number: 71, symbol: 'Lu', name: 'Lutetium', atomicMass: 174.97, category: 'Lanthanide', meltingPoint: 1663, boilingPoint: 3402, group: -1, period: 9 },
+            { number: 71, symbol: 'Lu', name: 'Lutetium', atomicMass: 174.97, category: 'Lanthanide', meltingPoint: 1663, boilingPoint: 3402, group: -1, period: 9 }, // Lu actually in group 3, period 6 in some tables, but for display grouped with Lns
             { number: 72, symbol: 'Hf', name: 'Hafnium', atomicMass: 178.49, category: 'Transition Metal', meltingPoint: 2233, boilingPoint: 4603, group: 4, period: 6 },
             { number: 73, symbol: 'Ta', name: 'Tantalum', atomicMass: 180.95, category: 'Transition Metal', meltingPoint: 3017, boilingPoint: 5458, group: 5, period: 6 },
             { number: 74, symbol: 'W', name: 'Tungsten', atomicMass: 183.84, category: 'Transition Metal', meltingPoint: 3422, boilingPoint: 5555, group: 6, period: 6 },
@@ -319,13 +343,13 @@
             { number: 81, symbol: 'Tl', name: 'Thallium', atomicMass: 204.38, category: 'Post-Transition Metal', meltingPoint: 303.6, boilingPoint: 1473, group: 13, period: 6 },
             { number: 82, symbol: 'Pb', name: 'Lead', atomicMass: 207.2, category: 'Post-Transition Metal', meltingPoint: 327.46, boilingPoint: 1749, group: 14, period: 6 },
             { number: 83, symbol: 'Bi', name: 'Bismuth', atomicMass: 208.98, category: 'Post-Transition Metal', meltingPoint: 271.4, boilingPoint: 1564, group: 15, period: 6 },
-            { number: 84, symbol: 'Po', name: 'Polonium', atomicMass: 209, category: 'Post-Transition Metal', meltingPoint: 254, boilingPoint: 962, group: 16, period: 6 },
-            { number: 85, symbol: 'At', name: 'Astatine', atomicMass: 210, category: 'Metalloid', meltingPoint: 302, boilingPoint: 337, group: 17, period: 6 },
+            { number: 84, symbol: 'Po', name: 'Polonium', atomicMass: 209, category: 'Post-Transition Metal', meltingPoint: 254, boilingPoint: 962, group: 16, period: 6 }, // Sometimes Metalloid
+            { number: 85, symbol: 'At', name: 'Astatine', atomicMass: 210, category: 'Metalloid', meltingPoint: 302, boilingPoint: 337, group: 17, period: 6 }, // Sometimes Halogen
             { number: 86, symbol: 'Rn', name: 'Radon', atomicMass: 222, category: 'Noble Gas', meltingPoint: -71, boilingPoint: -61.7, group: 18, period: 6 },
             { number: 87, symbol: 'Fr', name: 'Francium', atomicMass: 223, category: 'Alkali Metal', meltingPoint: 27, boilingPoint: 677, group: 1, period: 7 },
             { number: 88, symbol: 'Ra', name: 'Radium', atomicMass: 226, category: 'Alkaline Earth Metal', meltingPoint: 700, boilingPoint: 1737, group: 2, period: 7 },
-            { number: 89, symbol: 'Ac', name: 'Actinium', atomicMass: 227, category: 'Actinide', meltingPoint: 1050, boilingPoint: 3200, group: 3, period: 7 },
-            { number: 90, symbol: 'Th', name: 'Thorium', atomicMass: 232.04, category: 'Actinide', meltingPoint: 1750, boilingPoint: 4788, group: -1, period: 10 },
+            { number: 89, symbol: 'Ac', name: 'Actinium', atomicMass: 227, category: 'Actinide', meltingPoint: 1050, boilingPoint: 3200, group: 3, period: 7 }, // Group 3, Period 7 for main table placeholder
+            { number: 90, symbol: 'Th', name: 'Thorium', atomicMass: 232.04, category: 'Actinide', meltingPoint: 1750, boilingPoint: 4788, group: -1, period: 10 }, // period 10 for actinide row
             { number: 91, symbol: 'Pa', name: 'Protactinium', atomicMass: 231.04, category: 'Actinide', meltingPoint: 1568, boilingPoint: 4000, group: -1, period: 10 },
             { number: 92, symbol: 'U', name: 'Uranium', atomicMass: 238.03, category: 'Actinide', meltingPoint: 1132, boilingPoint: 4131, group: -1, period: 10 },
             { number: 93, symbol: 'Np', name: 'Neptunium', atomicMass: 237, category: 'Actinide', meltingPoint: 639, boilingPoint: 4174, group: -1, period: 10 },
@@ -338,7 +362,7 @@
             { number: 100, symbol: 'Fm', name: 'Fermium', atomicMass: 257, category: 'Actinide', meltingPoint: 1527, boilingPoint: null, group: -1, period: 10 },
             { number: 101, symbol: 'Md', name: 'Mendelevium', atomicMass: 258, category: 'Actinide', meltingPoint: 827, boilingPoint: null, group: -1, period: 10 },
             { number: 102, symbol: 'No', name: 'Nobelium', atomicMass: 259, category: 'Actinide', meltingPoint: 800, boilingPoint: null, group: -1, period: 10 },
-            { number: 103, symbol: 'Lr', name: 'Lawrencium', atomicMass: 262, category: 'Actinide', meltingPoint: 1627, boilingPoint: null, group: -1, period: 10 },
+            { number: 103, symbol: 'Lr', name: 'Lawrencium', atomicMass: 262, category: 'Actinide', meltingPoint: 1627, boilingPoint: null, group: -1, period: 10 }, // Lr actually in group 3, period 7 in some tables
             { number: 104, symbol: 'Rf', name: 'Rutherfordium', atomicMass: 261, category: 'Transition Metal', meltingPoint: null, boilingPoint: null, group: 4, period: 7 },
             { number: 105, symbol: 'Db', name: 'Dubnium', atomicMass: 262, category: 'Transition Metal', meltingPoint: null, boilingPoint: null, group: 5, period: 7 },
             { number: 106, symbol: 'Sg', name: 'Seaborgium', atomicMass: 263, category: 'Transition Metal', meltingPoint: null, boilingPoint: null, group: 6, period: 7 },
@@ -360,46 +384,31 @@
         const elementInfoContainer = document.getElementById('element-info-container');
         const lanthanidesContainer = document.querySelector('.lanthanide-row');
         const actinidesContainer = document.querySelector('.actinide-row');
+        // Get new wrapper elements
+        const lanthanideRowWrapper = document.getElementById('lanthanide-row-wrapper');
+        const actinideRowWrapper = document.getElementById('actinide-row-wrapper');
+
 
         function createElementTile(element) {
             const tile = document.createElement('div');
-            tile.classList.add('bg-element', 'p-1', 'rounded', 'text-center', 'aspect-square', 'flex', 'flex-col', 'justify-center', 'items-center', 'w-full', 'h-full');
+            // Added cursor-pointer for better UX
+            tile.classList.add('bg-element', 'p-1', 'rounded', 'text-center', 'aspect-square', 'flex', 'flex-col', 'justify-center', 'items-center', 'w-full', 'h-full', 'cursor-pointer');
             tile.innerHTML = `<span class="bg-element-num">${element.number}</span><span class="bg-element-symbol">${element.symbol}</span>`;
             tile.addEventListener('click', () => displayElementInfo(element));
 
-            let borderColor = '#6200EA';
+            let borderColor = '#6200EA'; // Default
 
             switch (element.category) {
-                case 'Alkali Metal':
-                    borderColor = '#FF5722';
-                    break;
-                case 'Alkaline Earth Metal':
-                    borderColor = '#FFC107';
-                    break;
-                case 'Transition Metal':
-                    borderColor = '#2196F3';
-                    break;
-                case 'Post-Transition Metal':
-                    borderColor = '#4CAF50';
-                    break;
-                case 'Metalloid':
-                    borderColor = '#9C27B0';
-                    break;
-                case 'Nonmetal':
-                    borderColor = '#8BC34A';
-                    break;
-                case 'Halogen':
-                    borderColor = '#00BCD4';
-                    break;
-                case 'Noble Gas':
-                    borderColor = '#E91E63';
-                    break;
-                case 'Lanthanide':
-                    borderColor = '#795548';
-                    break;
-                case 'Actinide':
-                    borderColor = '#5D4037';
-                    break;
+                case 'Alkali Metal': borderColor = '#FF5722'; break;
+                case 'Alkaline Earth Metal': borderColor = '#FFC107'; break;
+                case 'Transition Metal': borderColor = '#2196F3'; break;
+                case 'Post-Transition Metal': borderColor = '#4CAF50'; break;
+                case 'Metalloid': borderColor = '#9C27B0'; break;
+                case 'Nonmetal': borderColor = '#8BC34A'; break;
+                case 'Halogen': borderColor = '#00BCD4'; break;
+                case 'Noble Gas': borderColor = '#E91E63'; break;
+                case 'Lanthanide': borderColor = '#795548'; break;
+                case 'Actinide': borderColor = '#5D4037'; break;
             }
 
             tile.style.borderColor = borderColor;
@@ -407,11 +416,20 @@
         }
 
         function displayElementInfo(element) {
+            // Blur background elements
             periodicTableContainer.classList.add('blurred');
-            elementInfoContainer.innerHTML = '';
+            lanthanideRowWrapper.classList.add('blurred');
+            actinideRowWrapper.classList.add('blurred');
+            
+            // Disable body scroll
+            document.body.style.overflowY = 'hidden';
+
+            elementInfoContainer.innerHTML = ''; // Clear previous content
+            elementInfoContainer.style.display = 'flex'; // Show the overlay container
 
             const infoCard = document.createElement('div');
-            infoCard.classList.add('bg-slate-800', 'p-6', 'sm:p-8', 'rounded-xl', 'shadow-2xl', 'info-card-glow', 'w-full', 'md:w-3/5', 'lg:w-2/3', 'flex-shrink-0', 'flex', 'flex-col', 'transform', 'hover:scale-105', 'transition-transform', 'duration-300');
+            // Added max-h-[90vh] and overflow-y-auto to the card itself if it's very tall
+            infoCard.classList.add('bg-slate-800', 'p-6', 'sm:p-8', 'rounded-xl', 'shadow-2xl', 'info-card-glow', 'w-full', 'md:w-3/5', 'lg:w-2/3', 'flex-shrink-0', 'flex', 'flex-col', 'transform', 'hover:scale-105', 'transition-transform', 'duration-300', 'max-h-[90vh]', 'overflow-y-auto');
             infoCard.innerHTML = `
                 <div class="flex justify-between items-start">
                     <div>
@@ -422,7 +440,7 @@
                         </div>
                         <p class="text-sm text-slate-400 mt-1">${element.category}</p>
                     </div>
-                    <button class="text-slate-400 hover:text-white text-2xl close-button">&times;</button>
+                    <button class="text-slate-400 hover:text-white text-2xl close-button p-2 -mr-2 -mt-2">×</button>
                 </div>
                 <div class="my-4 sm:my-6 text-center">
                     <div class="atom">
@@ -433,7 +451,11 @@
                     </div>
                 </div>
                 <p class="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
-                    ${element.name} is a chemical element with symbol ${element.symbol} and atomic number ${element.number}.
+                    ${element.name} is a chemical element with symbol ${element.symbol} and atomic number ${element.number}. 
+                    It belongs to the ${element.category.toLowerCase()} group.
+                    The atomic mass of ${element.name} is ${element.atomicMass} u.
+                    ${element.meltingPoint !== null ? `It has a melting point of ${element.meltingPoint}°C` : 'Its melting point is not well-defined'}.
+                    ${element.boilingPoint !== null ? `and a boiling point of ${element.boilingPoint}°C.` : 'and its boiling point is not well-defined.'}
                 </p>
                 <div class="space-y-3 text-sm sm:text-base mt-auto">
                     <div class="flex justify-between">
@@ -442,14 +464,15 @@
                     </div>
                     <div class="flex justify-between">
                         <span class="text-slate-400">Melting point:</span>
-                        <span class="font-semibold text-white">${element.meltingPoint}°C</span>
+                        <span class="font-semibold text-white">${element.meltingPoint !== null ? element.meltingPoint + '°C' : 'N/A'}</span>
                     </div>
                     <div class="flex justify-between">
                         <span class="text-slate-400">Boiling point:</span>
-                        <span class="font-semibold text-white">${element.boilingPoint}°C</span>
+                        <span class="font-semibold text-white">${element.boilingPoint !== null ? element.boilingPoint + '°C' : 'N/A'}</span>
                     </div>
                 </div>
                 <div class="text-right text-xs text-slate-500 mt-6">
+                    Group: ${element.group > 0 ? element.group : 'N/A (Lanthanide/Actinide)'}, Period: ${element.period <= 7 ? element.period : 'N/A (Lanthanide/Actinide)'}
                 </div>
             `;
 
@@ -457,7 +480,15 @@
             const closeButton = infoCard.querySelector('.close-button');
             closeButton.addEventListener('click', () => {
                 elementInfoContainer.innerHTML = '';
+                elementInfoContainer.style.display = 'none'; // Hide the overlay
+                
+                // Unblur background elements
                 periodicTableContainer.classList.remove('blurred');
+                lanthanideRowWrapper.classList.remove('blurred');
+                actinideRowWrapper.classList.remove('blurred');
+
+                // Restore body scroll
+                document.body.style.overflowY = 'auto';
             });
         }
 
@@ -466,45 +497,61 @@
             lanthanidesContainer.innerHTML = '';
             actinidesContainer.innerHTML = '';
 
-            for (let element of periodicTableData) {
-                if (element.number >= 58 && element.number <= 71){ // Place Lanthanides
-                    const tile = createElementTile(element);
-                    lanthanidesContainer.appendChild(tile);
-                } else if (element.number >= 90 && element.number <= 103) { // Place Actinides
-                    const tile = createElementTile(element);
-                    actinidesContainer.appendChild(tile);
-                }
-                 else {
-                    const tile = createElementTile(element);
-                    let cell;
-                    if(element.number === 57 || element.number === 89){
-                         cell = document.createElement('div');
-                         cell.style.gridColumnStart = element.group;
-                         cell.style.gridRowStart = element.period;
-                         cell.appendChild(tile);
-                         periodicTableContainer.appendChild(cell);
-                    }
-                    else{
-                        cell = document.createElement('div');
-                        cell.style.gridColumnStart = element.group;
-                        cell.style.gridRowStart = element.period;
-                        cell.appendChild(tile);
-                        periodicTableContainer.appendChild(cell);
-                    }
-                }
-            }
-            // Create empty cells for the gap
-            const emptyCell6 = document.createElement('div');
-            emptyCell6.style.gridColumnStart = 4;
-            emptyCell6.style.gridColumnEnd = 15;
-            emptyCell6.style.gridRowStart = 6;
-            periodicTableContainer.appendChild(emptyCell6);
+            // Create a map for direct element lookup by number for positioning
+            const elementGrid = Array(10 * 18).fill(null); // Max 10 periods, 18 groups
 
-            const emptyCell7 = document.createElement('div');
-            emptyCell7.style.gridColumnStart = 4;
-            emptyCell7.style.gridColumnEnd = 15;
-            emptyCell7.style.gridRowStart = 7;
-            periodicTableContainer.appendChild(emptyCell7);
+            periodicTableData.forEach(element => {
+                const tile = createElementTile(element);
+                if (element.category === 'Lanthanide' && element.number >= 58 && element.number <= 71) {
+                    lanthanidesContainer.appendChild(tile);
+                } else if (element.category === 'Actinide' && element.number >= 90 && element.number <= 103) {
+                    actinidesContainer.appendChild(tile);
+                } else if (element.group > 0 && element.period > 0 && element.period <= 7) { // Main table elements
+                    const cell = document.createElement('div');
+                    cell.style.gridColumnStart = element.group;
+                    cell.style.gridRowStart = element.period;
+                    cell.appendChild(tile);
+                    periodicTableContainer.appendChild(cell);
+                }
+            });
+            
+            // Add placeholders for Lanthanide and Actinide series in the main table
+            // These are visual cues often shown as a single or ranged cell.
+            // We'll make a simple placeholder cell.
+            const laPlaceholderData = { number: '57-71', symbol: 'La*', name: 'Lanthanides', category: 'Lanthanide', group: 3, period: 6 };
+            const laPlaceholderTile = createElementTile(laPlaceholderData);
+            laPlaceholderTile.classList.add('italic', 'opacity-80');
+            laPlaceholderTile.onclick = () => lanthanidesContainer.scrollIntoView({ behavior: 'smooth' });
+
+            const acPlaceholderData = { number: '89-103', symbol: 'Ac*', name: 'Actinides', category: 'Actinide', group: 3, period: 7 };
+            const acPlaceholderTile = createElementTile(acPlaceholderData);
+            acPlaceholderTile.classList.add('italic', 'opacity-80');
+            acPlaceholderTile.onclick = () => actinidesContainer.scrollIntoView({ behavior: 'smooth' });
+            
+            // Add placeholders to main table
+            let cellLa = document.createElement('div');
+            cellLa.style.gridColumnStart = 3;
+            cellLa.style.gridRowStart = 6;
+            cellLa.appendChild(laPlaceholderTile);
+            periodicTableContainer.appendChild(cellLa);
+
+            let cellAc = document.createElement('div');
+            cellAc.style.gridColumnStart = 3;
+            cellAc.style.gridRowStart = 7;
+            cellAc.appendChild(acPlaceholderTile);
+            periodicTableContainer.appendChild(cellAc);
+
+
+            // Create empty cells for the gap visually.
+            // The previous nth-child selectors were brittle.
+            // These are now primarily for visual spacing if needed, actual elements define the grid.
+            // If using placeholders like La* and Ac*, explicit empty cells might not be needed
+            // or can be styled differently.
+            // The grid will naturally leave gaps if cells aren't filled.
+            // To explicitly make gaps from column 4 to 18 in rows 6 and 7 (if elements 57-71 and 89-103 were there)
+            // This approach with La* and Ac* in group 3 is more common.
+            // The provided CSS for empty cells using :nth-child might need adjustment if element order changes.
+            // For now, relying on grid layout and explicit placeholder elements.
         }
 
         renderPeriodicTable();
