@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ElementController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,3 +37,5 @@ Route::get('/api', function () {
     ];
     return response()->view('api-list', ['apiRoutes' => $apiRoutes]);
 });
+
+Route::get('/elements', [ElementController::class, 'index']);

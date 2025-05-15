@@ -12,6 +12,10 @@ class DatabaseSeeder extends Seeder
 {
     public function run()
     {
+        $this->call([
+            ElementSeeder::class,
+        ]);
+        
         $researchers = Researcher::factory()->count(3)->create();
         $equipment = Equipment::factory()->count(3)->create();
         $experiments = Experiment::factory()->count(2)->create();
