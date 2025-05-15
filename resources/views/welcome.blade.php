@@ -6,6 +6,7 @@
     <title>Dynamic Periodic Table</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
             <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -99,6 +100,9 @@
             max-height: 70vh; overflow-y: auto; display: grid;
             grid-template-columns: repeat(18, minmax(30px, 1fr));
             gap: 0.1rem; width: 100%;
+            overflow: hidden; /* Prevent box-shadow spill */
+            /* border-radius: 1.2rem; Rounded corners for clean edge */
+            /* border: 2px solid #a259f7; Subtle border for clean edge */
         }
 
         #element-info-container {
@@ -254,7 +258,8 @@
              boilingPoint: e.boiling_point,
              group: e.group,
              period: e.period,
-             description: e.description
+             description: e.description,
+             modelPath: e.model_path
            }));
            renderPeriodicTable();
          });
@@ -336,12 +341,19 @@
                     </div>
 
                     <div class="my-2 sm:my-4 text-center">
+                        ${element.modelPath ? `
+                        <model-viewer src="${element.modelPath}" alt="3D model of ${element.name}"
+                            style="width: 100%; height: 250px; background: transparent; border-radius: 1rem;"
+                            camera-controls auto-rotate auto-rotate-delay="0" rotation-per-second="0" interaction-prompt="auto" interaction-prompt-style="wiggle" ar ar-modes="webxr scene-viewer quick-look">
+                        </model-viewer>
+                        ` : `
                         <div class="atom">
                             <div class="electron-orbit"><div class="electron"></div></div>
                             <div class="electron-orbit"><div class="electron"></div></div>
                             <div class="electron-orbit"><div class="electron"></div></div>
                             <div class="nucleus"></div>
                         </div>
+                        `}
                     </div>
 
                     <p class="text-xs sm:text-sm md:text-base text-slate-300 leading-relaxed mb-4 sm:mb-6">

@@ -20,7 +20,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => -252.87,
                 'group' => 1,
                 'period' => 1,
-                'description' => 'Hydrogen is the lightest element and most abundant chemical substance in the universe. It is crucial for water and organic compounds.'
+                'description' => 'Hydrogen is the lightest element and most abundant chemical substance in the universe. It is crucial for water and organic compounds.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_001_hydrogen/element_001_hydrogen.glb'
             ],
             [
                 'number' => 2,
@@ -32,7 +33,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => -268.93,
                 'group' => 18,
                 'period' => 1,
-                'description' => 'Helium is a colorless, odorless, tasteless, non-toxic, inert, monatomic gas and has the lowest boiling point of all the elements.'
+                'description' => 'Helium is a colorless, odorless, tasteless, non-toxic, inert, monatomic gas and has the lowest boiling point of all the elements.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_002_helium/element_002_helium.glb'
             ],
             [
                 'number' => 3,
@@ -44,7 +46,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 1330,
                 'group' => 1,
                 'period' => 2,
-                'description' => 'Lithium is a soft, silvery-white alkali metal. It is highly reactive and flammable, and is used in batteries and alloys.'
+                'description' => 'Lithium is a soft, silvery-white alkali metal. It is highly reactive and flammable, and is used in batteries and alloys.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_003_lithium/element_003_lithium.glb'
             ],
             [
                 'number' => 4,
@@ -56,7 +59,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2471,
                 'group' => 2,
                 'period' => 2,
-                'description' => 'Beryllium is a relatively rare alkaline earth metal known for its high strength-to-weight ratio. It is used in aerospace and nuclear applications.'
+                'description' => 'Beryllium is a relatively rare alkaline earth metal known for its high strength-to-weight ratio. It is used in aerospace and nuclear applications.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_004_beryllium/element_004_beryllium.glb'
             ],
             [
                 'number' => 5,
@@ -68,7 +72,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 4000,
                 'group' => 13,
                 'period' => 2,
-                'description' => 'Boron is a metalloid with unique properties. It exists in several allotropes and is used in glass, ceramics, and as a neutron absorber in nuclear reactors.'
+                'description' => 'Boron is a metalloid with unique properties. It exists in several allotropes and is used in glass, ceramics, and as a neutron absorber in nuclear reactors.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_005_boron/element_005_boron.glb'
             ],
             [
                 'number' => 6,
@@ -80,7 +85,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 4827,
                 'group' => 14,
                 'period' => 2,
-                'description' => 'Carbon is a fundamental element for all known life on Earth. It exists in various forms like diamond, graphite, and fullerenes.'
+                'description' => 'Carbon is a fundamental element for all known life on Earth. It exists in various forms like diamond, graphite, and fullerenes.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_006_carbon/element_006_carbon.glb'
             ],
             [
                 'number' => 7,
@@ -92,7 +98,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => -195.79,
                 'group' => 15,
                 'period' => 2,
-                'description' => 'Nitrogen is a colorless, odorless, and mostly inert diatomic gas, making up about 78% of Earth\'s atmosphere. It is essential for proteins and DNA.'
+                'description' => 'Nitrogen is a colorless, odorless, and mostly inert diatomic gas, making up about 78% of Earth\'s atmosphere. It is essential for proteins and DNA.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_007_nitrogen/element_007_nitrogen.glb'
             ],
             [
                 'number' => 8,
@@ -104,7 +111,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => -182.95,
                 'group' => 16,
                 'period' => 2,
-                'description' => 'Oxygen is a highly reactive nonmetal and a vital component of air, essential for respiration in most living organisms and combustion.'
+                'description' => 'Oxygen is a highly reactive nonmetal and a vital component of air, essential for respiration in most living organisms and combustion.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_008_oxygen/element_008_oxygen.glb'
             ],
             [
                 'number' => 9,
@@ -116,7 +124,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => -188.11,
                 'group' => 17,
                 'period' => 2,
-                'description' => 'Fluorine is the most electronegative element and a highly reactive halogen. It is used in toothpaste (as fluoride) and refrigerants.'
+                'description' => 'Fluorine is the most electronegative element and a highly reactive halogen. It is used in toothpaste (as fluoride) and refrigerants.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_009_fluorine/element_009_fluorine.glb'
             ],
             [
                 'number' => 10,
@@ -128,7 +137,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => -246.08,
                 'group' => 18,
                 'period' => 2,
-                'description' => 'Neon is a noble gas that emits a characteristic reddish-orange light when an electric current is passed through it, widely used in neon signs.'
+                'description' => 'Neon is a noble gas that emits a characteristic reddish-orange light when an electric current is passed through it, widely used in neon signs.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_010_neon/element_010_neon.glb'
             ],
             [
                 'number' => 11,
@@ -140,7 +150,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 883,
                 'group' => 1,
                 'period' => 3,
-                'description' => 'Sodium is a soft, silvery-white, highly reactive alkali metal. It is a crucial component of salt (sodium chloride) and plays a vital role in biological systems.'
+                'description' => 'Sodium is a soft, silvery-white, highly reactive alkali metal. It is a crucial component of salt (sodium chloride) and plays a vital role in biological systems.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_011_sodium/element_011_sodium.glb'
             ],
             [
                 'number' => 12,
@@ -152,7 +163,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 1090,
                 'group' => 2,
                 'period' => 3,
-                'description' => 'Magnesium is a light, silvery-white alkaline earth metal. It is essential for chlorophyll in plants and is used in alloys and fireworks.'
+                'description' => 'Magnesium is a light, silvery-white alkaline earth metal. It is essential for chlorophyll in plants and is used in alloys and fireworks.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_012_magnesium/element_012_magnesium.glb'
             ],
             [
                 'number' => 13,
@@ -164,7 +176,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2470,
                 'group' => 13,
                 'period' => 3,
-                'description' => 'Aluminum is a lightweight, corrosion-resistant post-transition metal. It is the most abundant metal in the Earth\'s crust and widely used in construction, transportation, and packaging.'
+                'description' => 'Aluminum is a lightweight, corrosion-resistant post-transition metal. It is the most abundant metal in the Earth\'s crust and widely used in construction, transportation, and packaging.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_013_aluminum/element_013_aluminum.glb'
             ],
             [
                 'number' => 14,
@@ -176,7 +189,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3265,
                 'group' => 14,
                 'period' => 3,
-                'description' => 'Silicon is a metalloid and the second most abundant element in the Earth\'s crust. It is the primary component of semiconductors used in electronics.'
+                'description' => 'Silicon is a metalloid and the second most abundant element in the Earth\'s crust. It is the primary component of semiconductors used in electronics.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_014_silicon/element_014_silicon.glb'
             ],
             [
                 'number' => 15,
@@ -188,7 +202,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 280,
                 'group' => 15,
                 'period' => 3,
-                'description' => 'Phosphorus is a reactive nonmetal existing in several allotropes (white, red, black). It is essential for DNA, RNA, and energy transfer in living organisms.'
+                'description' => 'Phosphorus is a reactive nonmetal existing in several allotropes (white, red, black). It is essential for DNA, RNA, and energy transfer in living organisms.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_015_phosphorus/element_015_phosphorus.glb'
             ],
             [
                 'number' => 16,
@@ -200,7 +215,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 444.67,
                 'group' => 16,
                 'period' => 3,
-                'description' => 'Sulfur is a yellow, crystalline nonmetal. It is found in volcanic regions and is used in the production of sulfuric acid, fertilizers, and matches.'
+                'description' => 'Sulfur is a yellow, crystalline nonmetal. It is found in volcanic regions and is used in the production of sulfuric acid, fertilizers, and matches.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_016_sulfur/element_016_sulfur.glb'
             ],
             [
                 'number' => 17,
@@ -212,7 +228,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => -34.04,
                 'group' => 17,
                 'period' => 3,
-                'description' => 'Chlorine is a greenish-yellow, toxic halogen gas. It is used as a disinfectant in water treatment and in the production of various chemicals.'
+                'description' => 'Chlorine is a greenish-yellow, toxic halogen gas. It is used as a disinfectant in water treatment and in the production of various chemicals.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_017_chlorine/element_017_chlorine.glb'
             ],
             [
                 'number' => 18,
@@ -224,7 +241,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => -185.85,
                 'group' => 18,
                 'period' => 3,
-                'description' => 'Argon is a colorless, odorless, inert noble gas. It is the third most abundant gas in Earth\'s atmosphere and is used in lighting and welding.'
+                'description' => 'Argon is a colorless, odorless, inert noble gas. It is the third most abundant gas in Earth\'s atmosphere and is used in lighting and welding.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_018_argon/element_018_argon.glb'
             ],
             [
                 'number' => 19,
@@ -236,7 +254,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 759,
                 'group' => 1,
                 'period' => 4,
-                'description' => 'Potassium is a soft, silvery-white, highly reactive alkali metal. It is essential for nerve function and muscle contraction in living organisms.'
+                'description' => 'Potassium is a soft, silvery-white, highly reactive alkali metal. It is essential for nerve function and muscle contraction in living organisms.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_019_potassium/element_019_potassium.glb'
             ],
             [
                 'number' => 20,
@@ -248,7 +267,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 1484,
                 'group' => 2,
                 'period' => 4,
-                'description' => 'Calcium is a gray, alkaline earth metal and the fifth most abundant element in the Earth\'s crust. It is crucial for bones, teeth, and muscle function.'
+                'description' => 'Calcium is a gray, alkaline earth metal and the fifth most abundant element in the Earth\'s crust. It is crucial for bones, teeth, and muscle function.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_020_calcium/element_020_calcium.glb'
             ],
             [
                 'number' => 21,
@@ -260,7 +280,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2836,
                 'group' => 3,
                 'period' => 4,
-                'description' => 'Scandium is a silvery-white transition metal. It is relatively soft and reactive, used in some high-intensity lighting and to strengthen aluminum alloys.'
+                'description' => 'Scandium is a silvery-white transition metal. It is relatively soft and reactive, used in some high-intensity lighting and to strengthen aluminum alloys.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_021_scandium/element_021_scandium.glb'
             ],
             [
                 'number' => 22,
@@ -272,7 +293,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3287,
                 'group' => 4,
                 'period' => 4,
-                'description' => 'Titanium is a strong, lightweight, corrosion-resistant transition metal. It is widely used in aerospace, medical implants, and pigments.'
+                'description' => 'Titanium is a strong, lightweight, corrosion-resistant transition metal. It is widely used in aerospace, medical implants, and pigments.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_022_titanium/element_022_titanium.glb'
             ],
             [
                 'number' => 23,
@@ -284,7 +306,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3407,
                 'group' => 5,
                 'period' => 4,
-                'description' => 'Vanadium is a hard, silvery-gray, ductile transition metal. It is primarily used as an alloying agent to strengthen steel.'
+                'description' => 'Vanadium is a hard, silvery-gray, ductile transition metal. It is primarily used as an alloying agent to strengthen steel.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_023_vanadium/element_023_vanadium.glb'
             ],
             [
                 'number' => 24,
@@ -296,7 +319,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2672,
                 'group' => 6,
                 'period' => 4,
-                'description' => 'Chromium is a hard, shiny, silvery transition metal. It is known for its corrosion resistance and is used in stainless steel and chrome plating.'
+                'description' => 'Chromium is a hard, shiny, silvery transition metal. It is known for its corrosion resistance and is used in stainless steel and chrome plating.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_024_chromium/element_024_chromium.glb'
             ],
             [
                 'number' => 25,
@@ -308,7 +332,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2061,
                 'group' => 7,
                 'period' => 4,
-                'description' => 'Manganese is a hard, brittle, grayish-white transition metal. It is essential in steel production and in some biological enzymes.'
+                'description' => 'Manganese is a hard, brittle, grayish-white transition metal. It is essential in steel production and in some biological enzymes.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_025_manganese/element_025_manganese.glb'
             ],
             [
                 'number' => 26,
@@ -320,7 +345,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2862,
                 'group' => 8,
                 'period' => 4,
-                'description' => 'Iron is a lustrous, silvery-gray transition metal and the most used metal by mass. It is the main component of steel and essential for hemoglobin in blood.'
+                'description' => 'Iron is a lustrous, silvery-gray transition metal and the most used metal by mass. It is the main component of steel and essential for hemoglobin in blood.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_026_iron/element_026_iron.glb'
             ],
             [
                 'number' => 27,
@@ -332,7 +358,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2927,
                 'group' => 9,
                 'period' => 4,
-                'description' => 'Cobalt is a hard, lustrous, silvery-gray transition metal. It is used in alloys for jet engines, magnetic materials, and vitamin B12.'
+                'description' => 'Cobalt is a hard, lustrous, silvery-gray transition metal. It is used in alloys for jet engines, magnetic materials, and vitamin B12.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_027_cobalt/element_027_cobalt.glb'
             ],
             [
                 'number' => 28,
@@ -344,7 +371,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2913,
                 'group' => 10,
                 'period' => 4,
-                'description' => 'Nickel is a lustrous, silvery-white transition metal. It is corrosion-resistant and used in alloys like stainless steel and in batteries.'
+                'description' => 'Nickel is a lustrous, silvery-white transition metal. It is corrosion-resistant and used in alloys like stainless steel and in batteries.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_028_nickel/element_028_nickel.glb'
             ],
             [
                 'number' => 29,
@@ -356,7 +384,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2567,
                 'group' => 11,
                 'period' => 4,
-                'description' => 'Copper is a reddish-orange, ductile, and malleable transition metal.  It is an excellent conductor of heat and electricity, used in wiring, plumbing, and alloys like bronze.'
+                'description' => 'Copper is a reddish-orange, ductile, and malleable transition metal.  It is an excellent conductor of heat and electricity, used in wiring, plumbing, and alloys like bronze.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_029_copper/element_029_copper.glb'
             ],
             [
                 'number' => 30,
@@ -368,7 +397,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 907,
                 'group' => 12,
                 'period' => 4,
-                'description' => 'Zinc is a bluish-white, lustrous transition metal. It is used in galvanizing steel to prevent corrosion, in batteries, and in alloys like brass.'
+                'description' => 'Zinc is a bluish-white, lustrous transition metal. It is used in galvanizing steel to prevent corrosion, in batteries, and in alloys like brass.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_030_zinc/element_030_zinc.glb'
             ],
             [
                 'number' => 31,
@@ -380,7 +410,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2204,
                 'group' => 13,
                 'period' => 4,
-                'description' => 'Gallium is a soft, silvery-blue post-transition metal. It has a low melting point and is used in semiconductors and LEDs.'
+                'description' => 'Gallium is a soft, silvery-blue post-transition metal. It has a low melting point and is used in semiconductors and LEDs.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_031_gallium/element_031_gallium.glb'
             ],
             [
                 'number' => 32,
@@ -392,7 +423,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2833,
                 'group' => 14,
                 'period' => 4,
-                'description' => 'Germanium is a lustrous, hard metalloid. It is an important semiconductor material, used in transistors and other electronic devices.'
+                'description' => 'Germanium is a lustrous, hard metalloid. It is an important semiconductor material, used in transistors and other electronic devices.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_032_germanium/element_032_germanium.glb'
             ],
             [
                 'number' => 33,
@@ -404,7 +436,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 615,
                 'group' => 15,
                 'period' => 4,
-                'description' => 'Arsenic is a metalloid that exists in several allotropes. It is toxic and was historically used in pesticides.  Now used in semiconductors and wood preservation.'
+                'description' => 'Arsenic is a metalloid that exists in several allotropes. It is toxic and was historically used in pesticides.  Now used in semiconductors and wood preservation.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_033_arsenic/element_033_arsenic.glb'
             ],
             [
                 'number' => 34,
@@ -416,7 +449,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 685,
                 'group' => 16,
                 'period' => 4,
-                'description' => 'Selenium is a nonmetal with properties intermediate between sulfur and tellurium. It is used in photocells and as a dietary supplement.'
+                'description' => 'Selenium is a nonmetal with properties intermediate between sulfur and tellurium. It is used in photocells and as a dietary supplement.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_034_selenium/element_034_selenium.glb'
             ],
             [
                 'number' => 35,
@@ -428,7 +462,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 58.8,
                 'group' => 17,
                 'period' => 4,
-                'description' => 'Bromine is a reddish-brown liquid halogen. It is corrosive and toxic, used in flame retardants, water purification, and pharmaceuticals.'
+                'description' => 'Bromine is a reddish-brown liquid halogen. It is corrosive and toxic, used in flame retardants, water purification, and pharmaceuticals.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_035_bromine/element_035_bromine.glb'
             ],
             [
                 'number' => 36,
@@ -440,7 +475,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => -153.4,
                 'group' => 18,
                 'period' => 4,
-                'description' => 'Krypton is a colorless, odorless, inert noble gas. It is used in lighting, particularly in fluorescent lamps.'
+                'description' => 'Krypton is a colorless, odorless, inert noble gas. It is used in lighting, particularly in fluorescent lamps.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_036_krypton/element_036_krypton.glb'
             ],
             [
                 'number' => 37,
@@ -452,7 +488,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 688,
                 'group' => 1,
                 'period' => 5,
-                'description' => 'Rubidium is a soft, silvery-white, highly reactive alkali metal. It is used in atomic clocks and photocells.'
+                'description' => 'Rubidium is a soft, silvery-white, highly reactive alkali metal. It is used in atomic clocks and photocells.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_037_rubidium/element_037_rubidium.glb'
             ],
             [
                 'number' => 38,
@@ -464,7 +501,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 1382,
                 'group' => 2,
                 'period' => 5,
-                'description' => 'Strontium is a soft, silvery-white alkaline earth metal. It is used in fireworks (red color) and in some nuclear applications.'
+                'description' => 'Strontium is a soft, silvery-white alkaline earth metal. It is used in fireworks (red color) and in some nuclear applications.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_038_strontium/element_038_strontium.glb'
             ],
             [
                 'number' => 39,
@@ -476,7 +514,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3345,
                 'group' => 3,
                 'period' => 5,
-                'description' => 'Yttrium is a silvery-white transition metal. It is used in lasers, superconductors, and LEDs.'
+                'description' => 'Yttrium is a silvery-white transition metal. It is used in lasers, superconductors, and LEDs.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_039_yttrium/element_039_yttrium.glb'
             ],
             [
                 'number' => 40,
@@ -488,7 +527,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 4409,
                 'group' => 4,
                 'period' => 5,
-                'description' => 'Zirconium is a strong, corrosion-resistant, grayish-white transition metal. It is used in nuclear reactors, surgical implants, and ceramics.'
+                'description' => 'Zirconium is a strong, corrosion-resistant, grayish-white transition metal. It is used in nuclear reactors, surgical implants, and ceramics.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_040_zirconium/element_040_zirconium.glb'
             ],
             [
                 'number' => 41,
@@ -500,7 +540,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 4744,
                 'group' => 5,
                 'period' => 5,
-                'description' => 'Niobium is a soft, ductile, grayish transition metal. It is used in superconducting magnets and high-strength alloys.'
+                'description' => 'Niobium is a soft, ductile, grayish transition metal. It is used in superconducting magnets and high-strength alloys.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_041_niobium/element_041_niobium.glb'
             ],
             [
                 'number' => 42,
@@ -512,7 +553,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 4639,
                 'group' => 6,
                 'period' => 5,
-                'description' => 'Molybdenum is a hard, silvery-white transition metal with a high melting point. It is used in high-strength steel alloys.'
+                'description' => 'Molybdenum is a hard, silvery-white transition metal with a high melting point. It is used in high-strength steel alloys.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_042_molybdenum/element_042_molybdenum.glb'
             ],
             [
                 'number' => 43,
@@ -524,7 +566,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 4265,
                 'group' => 7,
                 'period' => 5,
-                'description' => 'Technetium is a radioactive transition metal. It is the lightest element that is entirely radioactive.  Used in medical imaging.'
+                'description' => 'Technetium is a radioactive transition metal. It is the lightest element that is entirely radioactive.  Used in medical imaging.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_043_technetium/element_043_technetium.glb'
             ],
             [
                 'number' => 44,
@@ -536,7 +579,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 4537,
                 'group' => 8,
                 'period' => 5,
-                'description' => 'Ruthenium is a rare, hard, silvery-white transition metal. It is used as a catalyst and in electrical contacts.'
+                'description' => 'Ruthenium is a rare, hard, silvery-white transition metal. It is used as a catalyst and in electrical contacts.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_044_ruthenium/element_044_ruthenium.glb'
             ],
             [
                 'number' => 45,
@@ -548,7 +592,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3695,
                 'group' => 9,
                 'period' => 5,
-                'description' => 'Rhodium is a rare, silvery-white, hard transition metal. It is highly corrosion-resistant and used in catalytic converters and jewelry.'
+                'description' => 'Rhodium is a rare, silvery-white, hard transition metal. It is highly corrosion-resistant and used in catalytic converters and jewelry.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_045_rhodium/element_045_rhodium.glb'
             ],
             [
                 'number' => 46,
@@ -560,7 +605,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2963,
                 'group' => 10,
                 'period' => 5,
-                'description' => 'Palladium is a silvery-white transition metal. It is used in catalytic converters, jewelry, and electronics.'
+                'description' => 'Palladium is a silvery-white transition metal. It is used in catalytic converters, jewelry, and electronics.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_046_palladium/element_046_palladium.glb'
             ],
             [
                 'number' => 47,
@@ -572,7 +618,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2162,
                 'group' => 11,
                 'period' => 5,
-                'description' => 'Silver is a soft, white, lustrous transition metal. It has the highest electrical and thermal conductivity of any element and is used in jewelry, currency, and electronics.'
+                'description' => 'Silver is a soft, white, lustrous transition metal. It has the highest electrical and thermal conductivity of any element and is used in jewelry, currency, and electronics.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_047_silver/element_047_silver.glb'
             ],
             [
                 'number' => 48,
@@ -584,7 +631,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 767,
                 'group' => 12,
                 'period' => 5,
-                'description' => 'Cadmium is a soft, bluish-white transition metal. It is toxic and used in batteries, electroplating, and pigments.'
+                'description' => 'Cadmium is a soft, bluish-white transition metal. It is toxic and used in batteries, electroplating, and pigments.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_048_cadmium/element_048_cadmium.glb'
             ],
             [
                 'number' => 49,
@@ -596,7 +644,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2072,
                 'group' => 13,
                 'period' => 5,
-                'description' => 'Indium is a soft, silvery-white post-transition metal. It is used in low-melting-point alloys, solders, and electronics.'
+                'description' => 'Indium is a soft, silvery-white post-transition metal. It is used in low-melting-point alloys, solders, and electronics.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_049_indium/element_049_indium.glb'
             ],
             [
                 'number' => 50,
@@ -608,7 +657,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2602,
                 'group' => 14,
                 'period' => 5,
-                'description' => 'Tin is a silvery-white, malleable post-transition metal. It is used in alloys like bronze and solder, and in tin plating to prevent corrosion.'
+                'description' => 'Tin is a silvery-white, malleable post-transition metal. It is used in alloys like bronze and solder, and in tin plating to prevent corrosion.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_050_tin/element_050_tin.glb'
             ],
             [
                 'number' => 51,
@@ -620,7 +670,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 1587,
                 'group' => 15,
                 'period' => 5,
-                'description' => 'Antimony is a lustrous, silvery metalloid. It is used in flame retardants, batteries, and alloys.'
+                'description' => 'Antimony is a lustrous, silvery metalloid. It is used in flame retardants, batteries, and alloys.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_051_antimony/element_051_antimony.glb'
             ],
             [
                 'number' => 52,
@@ -632,7 +683,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 988,
                 'group' => 16,
                 'period' => 5,
-                'description' => 'Tellurium is a brittle, silvery-white metalloid. It is used in alloys, semiconductors, and as a vulcanizing agent in rubber production.'
+                'description' => 'Tellurium is a brittle, silvery-white metalloid. It is used in alloys, semiconductors, and as a vulcanizing agent in rubber production.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_052_tellurium/element_052_tellurium.glb'
             ],
             [
                 'number' => 53,
@@ -644,7 +696,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 184.3,
                 'group' => 17,
                 'period' => 5,
-                'description' => 'Iodine is a lustrous, purple-black nonmetal halogen. It is used as a disinfectant, in iodized salt, and in photography.'
+                'description' => 'Iodine is a lustrous, purple-black nonmetal halogen. It is used as a disinfectant, in iodized salt, and in photography.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_053_iodine/element_053_iodine.glb'
             ],
             [
                 'number' => 54,
@@ -656,7 +709,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => -108.1,
                 'group' => 18,
                 'period' => 5,
-                'description' => 'Xenon is a colorless, odorless, heavy noble gas. It is used in lighting, lasers, and as an anesthetic.'
+                'description' => 'Xenon is a colorless, odorless, heavy noble gas. It is used in lighting, lasers, and as an anesthetic.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_054_xenon/element_054_xenon.glb'
             ],
             [
                 'number' => 55,
@@ -668,7 +722,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 671,
                 'group' => 1,
                 'period' => 6,
-                'description' => 'Cesium is a soft, silvery-gold, highly reactive alkali metal. It is used in atomic clocks and photocells.'
+                'description' => 'Cesium is a soft, silvery-gold, highly reactive alkali metal. It is used in atomic clocks and photocells.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_055_cesium/element_055_cesium.glb'
             ],
             [
                 'number' => 56,
@@ -680,7 +735,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 1897,
                 'group' => 2,
                 'period' => 6,
-                'description' => 'Barium is a soft, silvery-white alkaline earth metal. It is used in fireworks (green color) and in medical imaging (barium sulfate).'
+                'description' => 'Barium is a soft, silvery-white alkaline earth metal. It is used in fireworks (green color) and in medical imaging (barium sulfate).',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_056_barium/element_056_barium.glb'
             ],
             [
                 'number' => 57,
@@ -692,7 +748,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3454,
                 'group' => 3,
                 'period' => 6,
-                'description' => 'Lanthanum is a silvery-white, rare earth metal. It is the first element of the lanthanide series. Used in lighting, lenses, and alloys.'
+                'description' => 'Lanthanum is a silvery-white, rare earth metal. It is the first element of the lanthanide series. Used in lighting, lenses, and alloys.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_057_lanthanum/element_057_lanthanum.glb'
             ],
             [
                 'number' => 58,
@@ -704,7 +761,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3443,
                 'group' => 3,
                 'period' => 6,
-                'description' => 'Cerium is a silvery-white, reactive lanthanide. It is used in catalytic converters, lighter flints, and self-cleaning ovens.'
+                'description' => 'Cerium is a silvery-white, reactive lanthanide. It is used in catalytic converters, lighter flints, and self-cleaning ovens.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_058_cerium/element_058_cerium.glb'
             ],
             [
                 'number' => 59,
@@ -716,7 +774,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3127,
                 'group' => 3,
                 'period' => 6,
-                'description' => 'Praseodymium is a soft, silvery-white lanthanide. It is used in lasers, magnets, and to give glass a green color.'
+                'description' => 'Praseodymium is a soft, silvery-white lanthanide. It is used in lasers, magnets, and to give glass a green color.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_059_praseodymium/element_059_praseodymium.glb'
             ],
             [
                 'number' => 60,
@@ -728,7 +787,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3074,
                 'group' => 3,
                 'period' => 6,
-                'description' => 'Neodymium is a silvery lanthanide. It is used in powerful magnets (NdFeB), lasers, and to color glass and ceramics.'
+                'description' => 'Neodymium is a silvery lanthanide. It is used in powerful magnets (NdFeB), lasers, and to color glass and ceramics.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_060_neodymium/element_060_neodymium.glb'
             ],
             [
                 'number' => 61,
@@ -740,7 +800,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3000,
                 'group' => 3,
                 'period' => 6,
-                'description' => 'Promethium is a radioactive lanthanide. It is used in luminous paints and as a beta-particle source.'
+                'description' => 'Promethium is a radioactive lanthanide. It is used in luminous paints and as a beta-particle source.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_061_promethium/element_061_promethium.glb'
             ],
             [
                 'number' => 62,
@@ -752,7 +813,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 1791,
                 'group' => 3,
                 'period' => 6,
-                'description' => 'Samarium is a hard, silvery lanthanide. It is used in magnets, lasers, and as a neutron absorber.'
+                'description' => 'Samarium is a hard, silvery lanthanide. It is used in magnets, lasers, and as a neutron absorber.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_062_samarium/element_062_samarium.glb'
             ],
             [
                 'number' => 63,
@@ -764,7 +826,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 1529,
                 'group' => 3,
                 'period' => 6,
-                'description' => 'Europium is a soft, silvery-white lanthanide. It is used in lasers, control rods in nuclear reactors, and to activate phosphors in TV screens.'
+                'description' => 'Europium is a soft, silvery-white lanthanide. It is used in lasers, control rods in nuclear reactors, and to activate phosphors in TV screens.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_063_europium/element_063_europium.glb'
             ],
             [
                 'number' => 64,
@@ -776,7 +839,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3273,
                 'group' => 3,
                 'period' => 6,
-                'description' => 'Gadolinium is a silvery-white, ductile lanthanide. It has strong magnetic properties and is used in MRI contrast agents and nuclear control rods.'
+                'description' => 'Gadolinium is a silvery-white, ductile lanthanide. It has strong magnetic properties and is used in MRI contrast agents and nuclear control rods.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_064_gadolinium/element_064_gadolinium.glb'
             ],
             [
                 'number' => 65,
@@ -788,7 +852,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3230,
                 'group' => 3,
                 'period' => 6,
-                'description' => 'Terbium is a silvery-gray lanthanide. It is used in lasers and to activate phosphors, contributing to the green color in fluorescent lamps.'
+                'description' => 'Terbium is a silvery-gray lanthanide. It is used in lasers and to activate phosphors, contributing to the green color in fluorescent lamps.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_065_terbium/element_065_terbium.glb'
             ],
             [
                 'number' => 66,
@@ -800,7 +865,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2562,
                 'group' => 3,
                 'period' => 6,
-                'description' => 'Dysprosium is a silvery-white lanthanide. It is used in lasers, magnets, and nuclear reactor control rods.'
+                'description' => 'Dysprosium is a silvery-white lanthanide. It is used in lasers, magnets, and nuclear reactor control rods.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_066_dysprosium/element_066_dysprosium.glb'
             ],
             [
                 'number' => 67,
@@ -812,7 +878,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2720,
                 'group' => 3,
                 'period' => 6,
-                'description' => 'Holmium is a silvery-white lanthanide. It has strong magnetic properties and is used in lasers and nuclear reactors.'
+                'description' => 'Holmium is a silvery-white lanthanide. It has strong magnetic properties and is used in lasers and nuclear reactors.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_067_holmium/element_067_holmium.glb'
             ],
             [
                 'number' => 68,
@@ -824,7 +891,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2868,
                 'group' => 3,
                 'period' => 6,
-                'description' => 'Erbium is a silvery lanthanide. It is used in lasers (especially fiber optic amplifiers) and nuclear technology.'
+                'description' => 'Erbium is a silvery lanthanide. It is used in lasers (especially fiber optic amplifiers) and nuclear technology.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_068_erbium/element_068_erbium.glb'
             ],
             [
                 'number' => 69,
@@ -836,7 +904,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 1950,
                 'group' => 3,
                 'period' => 6,
-                'description' => 'Thulium is a silvery-gray lanthanide. It is used in portable X-ray devices.'
+                'description' => 'Thulium is a silvery-gray lanthanide. It is used in portable X-ray devices.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_069_thulium/element_069_thulium.glb'
             ],
             [
                 'number' => 70,
@@ -848,7 +917,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 1196,
                 'group' => 3,
                 'period' => 6,
-                'description' => 'Ytterbium is a soft, silvery lanthanide. It is used in lasers and infrared lasers.'
+                'description' => 'Ytterbium is a soft, silvery lanthanide. It is used in lasers and infrared lasers.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_070_ytterbium/element_070_ytterbium.glb'
             ],
             [
                 'number' => 71,
@@ -860,7 +930,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3402,
                 'group' => 3,
                 'period' => 6,
-                'description' => 'Lutetium is a silvery-white lanthanide. It is the last element of the lanthanide series. Used in catalysts and LEDs.'
+                'description' => 'Lutetium is a silvery-white lanthanide. It is the last element of the lanthanide series. Used in catalysts and LEDs.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_071_lutetium/element_071_lutetium.glb'
             ],
             [
                 'number' => 72,
@@ -872,7 +943,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 4603,
                 'group' => 4,
                 'period' => 6,
-                'description' => 'Hafnium is a silvery-gray transition metal. It is often found with zirconium and is used in nuclear reactors and high-temperature alloys.'
+                'description' => 'Hafnium is a silvery-gray transition metal. It is often found with zirconium and is used in nuclear reactors and high-temperature alloys.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_072_hafnium/element_072_hafnium.glb'
             ],
             [
                 'number' => 73,
@@ -884,7 +956,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 5458,
                 'group' => 5,
                 'period' => 6,
-                'description' => 'Tantalum is a hard, ductile, gray transition metal. It is highly corrosion-resistant and used in surgical implants and electronics.'
+                'description' => 'Tantalum is a hard, ductile, gray transition metal. It is highly corrosion-resistant and used in surgical implants and electronics.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_073_tantalum/element_073_tantalum.glb'
             ],
             [
                 'number' => 74,
@@ -896,7 +969,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 5555,
                 'group' => 6,
                 'period' => 6,
-                'description' => 'Tungsten is a hard, steel-gray transition metal with the highest melting point of all elements. It is used in light bulb filaments, cutting tools, and high-temperature alloys.'
+                'description' => 'Tungsten is a hard, steel-gray transition metal with the highest melting point of all elements. It is used in light bulb filaments, cutting tools, and high-temperature alloys.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_074_tungsten/element_074_tungsten.glb'
             ],
             [
                 'number' => 75,
@@ -908,7 +982,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 5596,
                 'group' => 7,
                 'period' => 6,
-                'description' => 'Rhenium is a rare, silvery-white transition metal with a high melting point. It is used in jet engine turbines and catalysts.'
+                'description' => 'Rhenium is a rare, silvery-white transition metal with a high melting point. It is used in jet engine turbines and catalysts.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_075_rhenium/element_075_rhenium.glb'
             ],
             [
                 'number' => 76,
@@ -920,7 +995,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 5012,
                 'group' => 8,
                 'period' => 6,
-                'description' => 'Osmium is a hard, brittle, bluish-white transition metal. It is one of the densest elements and is used in electrical contacts and catalysts.'
+                'description' => 'Osmium is a hard, brittle, bluish-white transition metal. It is one of the densest elements and is used in electrical contacts and catalysts.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_076_osmium/element_076_osmium.glb'
             ],
             [
                 'number' => 77,
@@ -932,7 +1008,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 4428,
                 'group' => 9,
                 'period' => 6,
-                'description' => 'Iridium is a hard, silvery-white transition metal. It is highly corrosion-resistant and used in spark plugs, electrical contacts, and catalysts.'
+                'description' => 'Iridium is a hard, silvery-white transition metal. It is highly corrosion-resistant and used in spark plugs, electrical contacts, and catalysts.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_077_iridium/element_077_iridium.glb'
             ],
             [
                 'number' => 78,
@@ -944,7 +1021,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3825,
                 'group' => 10,
                 'period' => 6,
-                'description' => 'Platinum is a dense, malleable, ductile, precious, silvery-white transition metal. It is used in catalytic converters, jewelry, and electronics.'
+                'description' => 'Platinum is a dense, malleable, ductile, precious, silvery-white transition metal. It is used in catalytic converters, jewelry, and electronics.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_078_platinum/element_078_platinum.glb'
             ],
             [
                 'number' => 79,
@@ -956,7 +1034,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2856,
                 'group' => 11,
                 'period' => 6,
-                'description' => 'Gold is a soft, yellow, precious transition metal. It is highly resistant to corrosion and is used in jewelry, currency, and electronics.'
+                'description' => 'Gold is a soft, yellow, precious transition metal. It is highly resistant to corrosion and is used in jewelry, currency, and electronics.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_079_gold/element_079_gold.glb'
             ],
             [
                 'number' => 80,
@@ -968,7 +1047,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 356.7,
                 'group' => 12,
                 'period' => 6,
-                'description' => 'Mercury is a silvery, liquid transition metal. It is toxic and used in thermometers, barometers, and electrical switches. Use is declining due to toxicity.'
+                'description' => 'Mercury is a silvery, liquid transition metal. It is toxic and used in thermometers, barometers, and electrical switches. Use is declining due to toxicity.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_080_mercury/element_080_mercury.glb'
             ],
             [
                 'number' => 81,
@@ -980,7 +1060,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 1473,
                 'group' => 13,
                 'period' => 6,
-                'description' => 'Thallium is a soft, silvery-white, highly toxic post-transition metal. It was formerly used in rat poisons and is now used in some specialized electronic devices.'
+                'description' => 'Thallium is a soft, silvery-white, highly toxic post-transition metal. It was formerly used in rat poisons and is now used in some specialized electronic devices.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_081_thallium/element_081_thallium.glb'
             ],
             [
                 'number' => 82,
@@ -992,7 +1073,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 1749,
                 'group' => 14,
                 'period' => 6,
-                'description' => 'Lead is a soft, heavy, dull gray post-transition metal. It is used in batteries, solder, and radiation shielding.  Its use is restricted due to toxicity.'
+                'description' => 'Lead is a soft, heavy, dull gray post-transition metal. It is used in batteries, solder, and radiation shielding.  Its use is restricted due to toxicity.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_082_lead/element_082_lead.glb'
             ],
             [
                 'number' => 83,
@@ -1004,7 +1086,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 1564,
                 'group' => 15,
                 'period' => 6,
-                'description' => 'Bismuth is a brittle, silvery-white post-transition metal with a slight pinkish tinge. It is used in pharmaceuticals, alloys, and as a lead-free replacement in plumbing.'
+                'description' => 'Bismuth is a brittle, silvery-white post-transition metal with a slight pinkish tinge. It is used in pharmaceuticals, alloys, and as a lead-free replacement in plumbing.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_083_bismuth/element_083_bismuth.glb'
             ],
             [
                 'number' => 84,
@@ -1016,11 +1099,12 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 962,
                 'group' => 16,
                 'period' => 6,
-                'description' => 'Polonium is a rare and highly radioactive post-transition metal. It is used in some specialized industrial applications, but its radioactivity limits its use.'
+                'description' => 'Polonium is a rare and highly radioactive post-transition metal. It is used in some specialized industrial applications, but its radioactivity limits its use.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_084_polonium/element_084_polonium.glb'
             ],
             [
                 'number' => 85,
-                'symbol' =>'At',
+                'symbol' => 'At',
                 'name' => 'Astatine',
                 'atomic_mass' => 210,
                 'category' => 'Halogen',
@@ -1028,7 +1112,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 337,
                 'group' => 17,
                 'period' => 6,
-                'description' => 'Astatine is a highly radioactive halogen. It is the rarest naturally occurring element on Earth.  Its properties are not well-known due to its rarity and radioactivity.'
+                'description' => 'Astatine is a highly radioactive halogen. It is the rarest naturally occurring element on Earth.  Its properties are not well-known due to its rarity and radioactivity.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_085_astatine/element_085_astatine.glb'
             ],
             [
                 'number' => 86,
@@ -1040,7 +1125,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => -61.7,
                 'group' => 18,
                 'period' => 6,
-                'description' => 'Radon is a radioactive, colorless, odorless noble gas. It is a health hazard as it can accumulate in buildings and cause lung cancer.'
+                'description' => 'Radon is a radioactive, colorless, odorless noble gas. It is a health hazard as it can accumulate in buildings and cause lung cancer.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_086_radon/element_086_radon.glb'
             ],
             [
                 'number' => 87,
@@ -1052,7 +1138,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 677,
                 'group' => 1,
                 'period' => 7,
-                'description' => 'Francium is a highly radioactive alkali metal. It is extremely rare and unstable, and its properties are not well-known.'
+                'description' => 'Francium is a highly radioactive alkali metal. It is extremely rare and unstable, and its properties are not well-known.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_087_francium/element_087_francium.glb'
             ],
             [
                 'number' => 88,
@@ -1064,7 +1151,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 1143,
                 'group' => 2,
                 'period' => 7,
-                'description' => 'Radium is a highly radioactive alkaline earth metal. It was formerly used in cancer treatment but is now largely replaced by less dangerous substances.'
+                'description' => 'Radium is a highly radioactive alkaline earth metal. It was formerly used in cancer treatment but is now largely replaced by less dangerous substances.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_088_radium/element_088_radium.glb'
             ],
             [
                 'number' => 89,
@@ -1076,7 +1164,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3200,
                 'group' => 3,
                 'period' => 7,
-                'description' => 'Actinium is a radioactive actinide. It is used in some specialized applications, such as neutron sources.'
+                'description' => 'Actinium is a radioactive actinide. It is used in some specialized applications, such as neutron sources.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_089_actinium/element_089_actinium.glb'
             ],
             [
                 'number' => 90,
@@ -1088,7 +1177,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 4788,
                 'group' => 3,
                 'period' => 7,
-                'description' => 'Thorium is a radioactive actinide. It is used as a nuclear fuel and in some specialized lighting.'
+                'description' => 'Thorium is a radioactive actinide. It is used as a nuclear fuel and in some specialized lighting.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_090_thorium/element_090_thorium.glb'
             ],
             [
                 'number' => 91,
@@ -1100,7 +1190,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 4000,
                 'group' => 3,
                 'period' => 7,
-                'description' => 'Protactinium is a radioactive actinide. It is rare and has no major commercial uses.'
+                'description' => 'Protactinium is a radioactive actinide. It is rare and has no major commercial uses.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_091_protactinium/element_091_protactinium.glb'
             ],
             [
                 'number' => 92,
@@ -1112,7 +1203,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 4131,
                 'group' => 3,
                 'period' => 7,
-                'description' => 'Uranium is a radioactive actinide. It is best known for its use as a nuclear fuel in power plants and in nuclear weapons.'
+                'description' => 'Uranium is a radioactive actinide. It is best known for its use as a nuclear fuel in power plants and in nuclear weapons.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_092_uranium/element_092_uranium.glb'
             ],
             [
                 'number' => 93,
@@ -1124,7 +1216,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 4000,
                 'group' => 3,
                 'period' => 7,
-                'description' => 'Neptunium is a radioactive actinide. It is a byproduct of nuclear reactions and is used in some nuclear research.'
+                'description' => 'Neptunium is a radioactive actinide. It is a byproduct of nuclear reactions and is used in some nuclear research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_093_neptunium/element_093_neptunium.glb'
             ],
             [
                 'number' => 94,
@@ -1136,7 +1229,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3228,
                 'group' => 3,
                 'period' => 7,
-                'description' => 'Plutonium is a radioactive actinide. It is primarily used in nuclear weapons and as a fuel in some nuclear reactors.'
+                'description' => 'Plutonium is a radioactive actinide. It is primarily used in nuclear weapons and as a fuel in some nuclear reactors.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_094_plutonium/element_094_plutonium.glb'
             ],
             [
                 'number' => 95,
@@ -1148,7 +1242,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2607,
                 'group' => 3,
                 'period' => 7,
-                'description' => 'Americium is a radioactive actinide. It is used in smoke detectors and as a neutron source.'
+                'description' => 'Americium is a radioactive actinide. It is used in smoke detectors and as a neutron source.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_095_americium/element_095_americium.glb'
             ],
             [
                 'number' => 96,
@@ -1160,7 +1255,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 3110,
                 'group' => 3,
                 'period' => 7,
-                'description' => 'Curium is a radioactive actinide. It is used in radioisotope thermoelectric generators (RTGs) and nuclear research.'
+                'description' => 'Curium is a radioactive actinide. It is used in radioisotope thermoelectric generators (RTGs) and nuclear research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_096_curium/element_096_curium.glb'
             ],
             [
                 'number' => 97,
@@ -1172,7 +1268,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 2900,
                 'group' => 3,
                 'period' => 7,
-                'description' => 'Berkelium is a radioactive actinide. It is primarily used in scientific research.'
+                'description' => 'Berkelium is a radioactive actinide. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_097_berkelium/element_097_berkelium.glb'
             ],
             [
                 'number' => 98,
@@ -1184,7 +1281,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 1745,
                 'group' => 3,
                 'period' => 7,
-                'description' => 'Californium is a radioactive actinide.  It is a strong neutron emitter, used in nuclear reactors, cancer treatment, and moisture gauges.'
+                'description' => 'Californium is a radioactive actinide.  It is a strong neutron emitter, used in nuclear reactors, cancer treatment, and moisture gauges.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_098_californium/element_098_californium.glb'
             ],
             [
                 'number' => 99,
@@ -1196,7 +1294,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => 990,
                 'group' => 3,
                 'period' => 7,
-                'description' => 'Einsteinium is a radioactive actinide. It is primarily used in scientific research.'
+                'description' => 'Einsteinium is a radioactive actinide. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_099_einsteinium/element_099_einsteinium.glb'
             ],
             [
                 'number' => 100,
@@ -1208,7 +1307,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 3,
                 'period' => 7,
-                'description' => 'Fermium is a radioactive actinide. It is primarily used in scientific research.'
+                'description' => 'Fermium is a radioactive actinide. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_100_fermium/element_100_fermium.glb'
             ],
             [
                 'number' => 101,
@@ -1220,7 +1320,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 3,
                 'period' => 7,
-                'description' => 'Mendelevium is a radioactive actinide. It is primarily used in scientific research.'
+                'description' => 'Mendelevium is a radioactive actinide. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_101_mendelevium/element_101_mendelevium.glb'
             ],
             [
                 'number' => 102,
@@ -1232,7 +1333,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 3,
                 'period' => 7,
-                'description' => 'Nobelium is a radioactive actinide. It is primarily used in scientific research.'
+                'description' => 'Nobelium is a radioactive actinide. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_102_nobelium/element_102_nobelium.glb'
             ],
             [
                 'number' => 103,
@@ -1244,7 +1346,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 3,
                 'period' => 7,
-                'description' => 'Lawrencium is a radioactive actinide. It is the last element of the actinide series and is primarily used for research.'
+                'description' => 'Lawrencium is a radioactive actinide. It is the last element of the actinide series and is primarily used for research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_103_lawrencium/element_103_lawrencium.glb'
             ],
             [
                 'number' => 104,
@@ -1256,7 +1359,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 4,
                 'period' => 7,
-                'description' => 'Rutherfordium is a synthetic, radioactive transition metal. It is primarily used in scientific research.'
+                'description' => 'Rutherfordium is a synthetic, radioactive transition metal. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_104_rutherfordium/element_104_rutherfordium.glb'
             ],
             [
                 'number' => 105,
@@ -1268,7 +1372,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 5,
                 'period' => 7,
-                'description' => 'Dubnium is a synthetic, radioactive transition metal. It is primarily used in scientific research.'
+                'description' => 'Dubnium is a synthetic, radioactive transition metal. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_105_dubnium/element_105_dubnium.glb'
             ],
             [
                 'number' => 106,
@@ -1280,7 +1385,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 6,
                 'period' => 7,
-                'description' => 'Seaborgium is a synthetic, radioactive transition metal. It is primarily used in scientific research.'
+                'description' => 'Seaborgium is a synthetic, radioactive transition metal. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_106_seaborgium/element_106_seaborgium.glb'
             ],
             [
                 'number' => 107,
@@ -1292,7 +1398,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 7,
                 'period' => 7,
-                'description' => 'Bohrium is a synthetic, radioactive transition metal. It is primarily used in scientific research.'
+                'description' => 'Bohrium is a synthetic, radioactive transition metal. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_107_bohrium/element_107_bohrium.glb'
             ],
             [
                 'number' => 108,
@@ -1304,7 +1411,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 8,
                 'period' => 7,
-                'description' => 'Hassium is a synthetic, radioactive transition metal. It is primarily used in scientific research.'
+                'description' => 'Hassium is a synthetic, radioactive transition metal. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_108_hassium/element_108_hassium.glb'
             ],
             [
                 'number' => 109,
@@ -1316,7 +1424,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 9,
                 'period' => 7,
-                'description' => 'Meitnerium is a synthetic, radioactive transition metal. It is primarily used in scientific research.'
+                'description' => 'Meitnerium is a synthetic, radioactive transition metal. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_109_meitnerium/element_109_meitnerium.glb'
             ],
             [
                 'number' => 110,
@@ -1328,7 +1437,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 10,
                 'period' => 7,
-                'description' => 'Darmstadtium is a synthetic, radioactive transition metal. It is primarily used in scientific research.'
+                'description' => 'Darmstadtium is a synthetic, radioactive transition metal. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_110_darmstadtium/element_110_darmstadtium.glb'
             ],
             [
                 'number' => 111,
@@ -1340,7 +1450,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 11,
                 'period' => 7,
-                'description' => 'Roentgenium is a synthetic, radioactive transition metal. It is primarily used in scientific research.'
+                'description' => 'Roentgenium is a synthetic, radioactive transition metal. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_111_roentgenium/element_111_roentgenium.glb'
             ],
             [
                 'number' => 112,
@@ -1352,7 +1463,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 12,
                 'period' => 7,
-                'description' => 'Copernicium is a synthetic, radioactive transition metal. It is primarily used in scientific research.'
+                'description' => 'Copernicium is a synthetic, radioactive transition metal. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_112_copernicium/element_112_copernicium.glb'
             ],
             [
                 'number' => 113,
@@ -1364,7 +1476,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 13,
                 'period' => 7,
-                'description' => 'Nihonium is a synthetic, radioactive post-transition metal. It is primarily used in scientific research.'
+                'description' => 'Nihonium is a synthetic, radioactive post-transition metal. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_113_nihonium/element_113_nihonium.glb'
             ],
             [
                 'number' => 114,
@@ -1376,7 +1489,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 14,
                 'period' => 7,
-                'description' => 'Flerovium is a synthetic, radioactive post-transition metal. It is primarily used in scientific research.'
+                'description' => 'Flerovium is a synthetic, radioactive post-transition metal. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_114_flerovium/element_114_flerovium.glb'
             ],
             [
                 'number' => 115,
@@ -1388,7 +1502,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 15,
                 'period' => 7,
-                'description' => 'Moscovium is a synthetic, radioactive post-transition metal. It is primarily used in scientific research.'
+                'description' => 'Moscovium is a synthetic, radioactive post-transition metal. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_115_moscovium/element_115_moscovium.glb'
             ],
             [
                 'number' => 116,
@@ -1400,7 +1515,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 16,
                 'period' => 7,
-                'description' => 'Livermorium is a synthetic, radioactive post-transition metal. It is primarily used in scientific research.'
+                'description' => 'Livermorium is a synthetic, radioactive post-transition metal. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_116_livermorium/element_116_livermorium.glb'
             ],
             [
                 'number' => 117,
@@ -1412,7 +1528,8 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 17,
                 'period' => 7,
-                'description' => 'Tennessine is a synthetic, radioactive halogen. It is primarily used in scientific research.'
+                'description' => 'Tennessine is a synthetic, radioactive halogen. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_117_tennessine/element_117_tennessine.glb'
             ],
             [
                 'number' => 118,
@@ -1424,9 +1541,9 @@ class ElementSeeder extends Seeder
                 'boiling_point' => null,
                 'group' => 18,
                 'period' => 7,
-                'description' => 'Oganesson is a synthetic, radioactive noble gas. It is primarily used in scientific research.'
+                'description' => 'Oganesson is a synthetic, radioactive noble gas. It is primarily used in scientific research.',
+                'model_path' => 'https://storage.googleapis.com/search-ar-edu/periodic-table/element_118_oganesson/element_118_oganesson.glb'
             ],
         ]);
-        
     }
 }
