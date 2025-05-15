@@ -23,6 +23,7 @@ return new class extends Migration
             $table->integer('group')->nullable();
             $table->integer('period')->nullable();
             $table->text('description')->nullable();
+            $table->string('model_path')->nullable();
             $table->timestamps();
         });
     }

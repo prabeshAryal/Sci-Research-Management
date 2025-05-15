@@ -114,6 +114,14 @@
             gap: 2rem; /* Gap between the two cards */
             overflow-y: auto; /* For scrolling when stacked and content overflows */
             flex-direction: row; /* Default for larger screens */
+            opacity: 0;
+            transform: scale(0.97);
+            transition: opacity 0.35s cubic-bezier(.4,0,.2,1), transform 0.35s cubic-bezier(.4,0,.2,1);
+        }
+        #element-info-container.active {
+            display: flex !important;
+            opacity: 1;
+            transform: scale(1);
         }
 
         .blurred {
@@ -123,6 +131,7 @@
             display: grid; grid-template-columns: repeat(15, minmax(30px, 1fr));
             gap: 0.1rem; margin-top: 0.5rem;
             transition: filter 0.3s ease, opacity 0.3s ease; /* Added transition for blur */
+            transform: perspective(800px) rotateX(10deg); /* Sync tilt with main table */
         }
         /* For Lanthanide/Actinide wrapper divs */
         #lanthanide-row-wrapper, #actinide-row-wrapper {
@@ -384,14 +393,21 @@
                 </div>
             `;
             elementInfoContainer.style.display = 'flex';
+            elementInfoContainer.classList.remove('active');
+            requestAnimationFrame(() => {
+                elementInfoContainer.classList.add('active');
+            });
 
             document.getElementById('close-info-button').addEventListener('click', () => {
-                elementInfoContainer.innerHTML = '';
-                elementInfoContainer.style.display = 'none';
-                periodicTableContainer.classList.remove('blurred');
-                lanthanideRowWrapper.classList.remove('blurred');
-                actinideRowWrapper.classList.remove('blurred');
-                document.body.style.overflowY = 'auto';
+                elementInfoContainer.classList.remove('active');
+                setTimeout(() => {
+                    elementInfoContainer.innerHTML = '';
+                    elementInfoContainer.style.display = 'none';
+                    periodicTableContainer.classList.remove('blurred');
+                    lanthanideRowWrapper.classList.remove('blurred');
+                    actinideRowWrapper.classList.remove('blurred');
+                    document.body.style.overflowY = 'auto';
+                }, 350);
             });
         }
 
