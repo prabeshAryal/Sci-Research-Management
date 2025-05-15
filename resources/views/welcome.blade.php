@@ -159,28 +159,84 @@
             pointer-events: none;
         }
 
+        .nav-link {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, currentColor, transparent);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            transform: translateX(100%);
+        }
+
+        /* Add a subtle glow to the header */
+        header {
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.1);
+        }
+
     </style>
 </head>
 <body class="bg-black">
-    <div class="container mx-auto p-4">
-        <div class="mb-6 text-center">
-            <h1 class="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-purple-600 mb-2">Interactive Periodic Table</h1>
-            <p class="text-gray-400">Click on any element to view detailed information</p>
-        </div>
-
-        <div id="periodic-table-container" class="w-full overflow-auto mb-8 z-0 transform transition duration-500 ease-in-out">
-        </div>
-        <div id="lanthanide-row-wrapper" class="flex justify-center">
-            <div class="lanthanide-row">
+    <!-- Navigation Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg border-b border-indigo-500/20">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <h1 class="text-2xl font-bold text-indigo-300">Research Management System</h1>
+                    <span class="text-slate-400">|</span>
+                    <span class="text-slate-300">Interactive Periodic Table</span>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="/api" class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-black hover:bg-slate-900 text-indigo-300 transition-colors border border-indigo-500/20">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <span>API Routes</span>
+                    </a>
+                    <a href="/admin" class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-black hover:bg-slate-900 text-violet-300 transition-colors border border-violet-500/20">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                        <span>Admin Panel</span>
+                    </a>
+                </div>
             </div>
         </div>
-        <div id="actinide-row-wrapper" class="flex justify-center">
-            <div class="actinide-row">
-            </div>
-        </div>
+    </header>
 
-        <div id="element-info-container">
-            <!-- Two cards will be populated here by JS -->
+    <div class="periodic-table-container pt-20"> <!-- Added padding-top to account for fixed header -->
+        <div class="container mx-auto p-4">
+            <div class="mb-6 text-center">
+                <h1 class="text-2xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-purple-600 mb-2">Interactive Periodic Table</h1>
+                <p class="text-gray-400">Click on any element to view detailed information</p>
+            </div>
+
+            <div id="periodic-table-container" class="w-full overflow-auto mb-8 z-0 transform transition duration-500 ease-in-out">
+            </div>
+            <div id="lanthanide-row-wrapper" class="flex justify-center">
+                <div class="lanthanide-row">
+                </div>
+            </div>
+            <div id="actinide-row-wrapper" class="flex justify-center">
+                <div class="actinide-row">
+                </div>
+            </div>
+
+            <div id="element-info-container">
+                <!-- Two cards will be populated here by JS -->
+            </div>
         </div>
     </div>
     <script>
