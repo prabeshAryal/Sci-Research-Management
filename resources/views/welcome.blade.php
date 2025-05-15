@@ -424,7 +424,7 @@
 
                 <!-- Detailed Info Card (Right) -->
                 <div id="detailed-info-card"
-                     class="bg-slate-800 p-6 sm:p-8 rounded-xl shadow-2xl info-card-glow flex flex-col max-h-[85vh] md:max-h-[80vh] overflow-y-auto"
+                     class="bg-slate-800 p-6 sm:p-8 rounded-xl shadow-2xl info-card-glow flex flex-col max-h-[85vh] md:max-h-[80vh] overflow-y-auto cursor-pointer"
                      style="width: clamp(300px, 45vw, 520px); transform: perspective(800px) rotateY(-10deg);">
 
                     <div class="flex justify-between items-start mb-4">
