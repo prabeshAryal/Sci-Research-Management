@@ -183,15 +183,14 @@
                 </div>
                 <div class="flex items-center space-x-3">
                     <a href="/" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-black hover:bg-slate-900 text-indigo-300 transition-colors border border-indigo-500/20">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/>
                         </svg>
                         <span class="text-sm">Home</span>
                     </a>
                     <a href="/api" class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg bg-black hover:bg-slate-900 text-violet-300 transition-colors border border-violet-500/20">
-                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                         </svg>
                         <span class="text-sm">API Documentation</span>
                     </a>
@@ -295,18 +294,18 @@
                         <div id="observations-crud" class="bg-slate-800/30 rounded-lg p-4"></div>
                     </div>
                 </div>
-            </div>
+        </div>
         </div>
     </div>
 
-    <script>
-    // Helper to fetch and render data for each entity
-    async function fetchAndRender(entity, containerId, fields, apiUrl) {
-        const container = document.getElementById(containerId);
+<script>
+// Helper to fetch and render data for each entity
+async function fetchAndRender(entity, containerId, fields, apiUrl) {
+    const container = document.getElementById(containerId);
         container.innerHTML = '<div class="text-center text-slate-400">Loading...</div>';
-        try {
-            const res = await fetch(apiUrl);
-            const data = await res.json();
+    try {
+        const res = await fetch(apiUrl);
+        const data = await res.json();
             let html = `
                 <div class="overflow-x-auto">
                     <table class="w-full text-sm text-left border-collapse">
@@ -318,7 +317,7 @@
                         </thead>
                         <tbody>`;
             
-            data.forEach(item => {
+        data.forEach(item => {
                 html += `
                     <tr class="hover:bg-slate-700/30 transition-colors">
                         ${fields.map(f => `<td class="px-6 py-4 border-b border-slate-700/50 text-slate-300 text-center align-middle">${item[f] ?? ''}</td>`).join('')}
@@ -345,19 +344,19 @@
                         </tbody>
                     </table>
                 </div>`;
-            container.innerHTML = html;
-        } catch (e) {
+        container.innerHTML = html;
+    } catch (e) {
             container.innerHTML = '<div class="text-center text-red-500">Failed to load data.</div>';
-        }
     }
+}
 
-    // --- CRUD Modal and Form Logic ---
-    async function showExperimentForm(id = null) {
-        const [researchers, equipment, experiment] = await Promise.all([
-            fetch('/api/researchers').then(r => r.json()),
-            fetch('/api/equipment').then(r => r.json()),
-            id ? fetch(`/api/experiments/${id}`).then(r => r.json()) : Promise.resolve(null)
-        ]);
+// --- CRUD Modal and Form Logic ---
+async function showExperimentForm(id = null) {
+    const [researchers, equipment, experiment] = await Promise.all([
+        fetch('/api/researchers').then(r => r.json()),
+        fetch('/api/equipment').then(r => r.json()),
+        id ? fetch(`/api/experiments/${id}`).then(r => r.json()) : Promise.resolve(null)
+    ]);
         
         let formHtml = `
             <form id="experimentForm" class="space-y-4">
@@ -381,53 +380,53 @@
                     <label class="block text-slate-300 font-medium">Researchers</label>
                     <select class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name="researcher_ids" multiple required>
                         ${researchers.map(r => `<option value="${r.id}" ${experiment && experiment.researchers.some(er => er.id === r.id) ? 'selected' : ''}>${r.name}</option>`).join('')}
-                    </select>
-                </div>
+            </select>
+        </div>
                 <div class="space-y-2">
                     <label class="block text-slate-300 font-medium">Equipment</label>
                     <select class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name="equipment_ids" multiple required>
                         ${equipment.map(eq => `<option value="${eq.id}" ${experiment && experiment.equipment.some(ee => ee.id === eq.id) ? 'selected' : ''}>${eq.name}</option>`).join('')}
-                    </select>
-                </div>
+            </select>
+        </div>
                 <div class="flex justify-end space-x-3 mt-6 pt-4 border-t border-slate-700">
                     <button type="button" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors shadow-sm hover:shadow" onclick="closeModal()">Cancel</button>
                     <button type="submit" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors shadow-sm hover:shadow">Save Changes</button>
                 </div>
-            </form>`;
+    </form>`;
         
-        showModal('Experiment', formHtml);
-        document.getElementById('experimentForm').onsubmit = async function(e) {
-            e.preventDefault();
-            const form = e.target;
-            const data = {
-                title: form.title.value,
-                description: form.description.value,
-                start_date: form.start_date.value,
-                end_date: form.end_date.value,
-                researcher_ids: Array.from(form.researcher_ids.selectedOptions).map(o => o.value),
-                equipment_ids: Array.from(form.equipment_ids.selectedOptions).map(o => o.value)
-            };
-            await fetch('/api/experiments' + (id ? '/' + id : ''), {
-                method: id ? 'PUT' : 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            closeModal();
-            fetchAndRender('Experiment', 'experiments-crud', ['id','title','description','start_date','end_date'], '/api/experiments');
+    showModal('Experiment', formHtml);
+    document.getElementById('experimentForm').onsubmit = async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = {
+            title: form.title.value,
+            description: form.description.value,
+            start_date: form.start_date.value,
+            end_date: form.end_date.value,
+            researcher_ids: Array.from(form.researcher_ids.selectedOptions).map(o => o.value),
+            equipment_ids: Array.from(form.equipment_ids.selectedOptions).map(o => o.value)
         };
+        await fetch('/api/experiments' + (id ? '/' + id : ''), {
+            method: id ? 'PUT' : 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        closeModal();
+        fetchAndRender('Experiment', 'experiments-crud', ['id','title','description','start_date','end_date'], '/api/experiments');
+    };
+}
+async function editExperiment(id) { showExperimentForm(id); }
+function deleteExperiment(id) {
+    if (confirm('Are you sure you want to delete this experiment?')) {
+        fetch(`/api/experiments/${id}`, { method: 'DELETE' })
+            .then(() => fetchAndRender('Experiment', 'experiments-crud', ['id','title','description','start_date','end_date'], '/api/experiments'));
     }
-    async function editExperiment(id) { showExperimentForm(id); }
-    function deleteExperiment(id) {
-        if (confirm('Are you sure you want to delete this experiment?')) {
-            fetch(`/api/experiments/${id}`, { method: 'DELETE' })
-                .then(() => fetchAndRender('Experiment', 'experiments-crud', ['id','title','description','start_date','end_date'], '/api/experiments'));
-        }
+}
+async function showResearcherForm(id = null) {
+    let researcher = null;
+    if (id) {
+        researcher = await fetch(`/api/researchers/${id}`).then(r => r.json());
     }
-    async function showResearcherForm(id = null) {
-        let researcher = null;
-        if (id) {
-            researcher = await fetch(`/api/researchers/${id}`).then(r => r.json());
-        }
         let formHtml = `<form id='researcherForm' class="space-y-4">
             <div class="space-y-2">
                 <label class="block text-slate-300 font-medium">Name</label>
@@ -445,37 +444,37 @@
                 <button type="button" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors shadow-sm hover:shadow" onclick="closeModal()">Cancel</button>
                 <button type="submit" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors shadow-sm hover:shadow">Save Changes</button>
             </div>
-        </form>`;
-        showModal('Researcher', formHtml);
-        document.getElementById('researcherForm').onsubmit = async function(e) {
-            e.preventDefault();
-            const form = e.target;
-            const data = {
-                name: form.name.value,
-                email: form.email.value,
-                institution: form.institution.value
-            };
-            await fetch('/api/researchers' + (id ? '/' + id : ''), {
-                method: id ? 'PUT' : 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            closeModal();
-            fetchAndRender('Researcher', 'researchers-crud', ['id','name','email','institution'], '/api/researchers');
+    </form>`;
+    showModal('Researcher', formHtml);
+    document.getElementById('researcherForm').onsubmit = async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = {
+            name: form.name.value,
+            email: form.email.value,
+            institution: form.institution.value
         };
+        await fetch('/api/researchers' + (id ? '/' + id : ''), {
+            method: id ? 'PUT' : 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        closeModal();
+        fetchAndRender('Researcher', 'researchers-crud', ['id','name','email','institution'], '/api/researchers');
+    };
+}
+async function editResearcher(id) { showResearcherForm(id); }
+function deleteResearcher(id) {
+    if (confirm('Are you sure you want to delete this researcher?')) {
+        fetch(`/api/researchers/${id}`, { method: 'DELETE' })
+            .then(() => fetchAndRender('Researcher', 'researchers-crud', ['id','name','email','institution'], '/api/researchers'));
     }
-    async function editResearcher(id) { showResearcherForm(id); }
-    function deleteResearcher(id) {
-        if (confirm('Are you sure you want to delete this researcher?')) {
-            fetch(`/api/researchers/${id}`, { method: 'DELETE' })
-                .then(() => fetchAndRender('Researcher', 'researchers-crud', ['id','name','email','institution'], '/api/researchers'));
-        }
+}
+async function showEquipmentForm(id = null) {
+    let equipment = null;
+    if (id) {
+        equipment = await fetch(`/api/equipment/${id}`).then(r => r.json());
     }
-    async function showEquipmentForm(id = null) {
-        let equipment = null;
-        if (id) {
-            equipment = await fetch(`/api/equipment/${id}`).then(r => r.json());
-        }
         let formHtml = `<form id='equipmentForm' class="space-y-4">
             <div class="space-y-2">
                 <label class="block text-slate-300 font-medium">Name</label>
@@ -493,44 +492,44 @@
                 <button type="button" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors shadow-sm hover:shadow" onclick="closeModal()">Cancel</button>
                 <button type="submit" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors shadow-sm hover:shadow">Save Changes</button>
             </div>
-        </form>`;
-        showModal('Equipment', formHtml);
-        document.getElementById('equipmentForm').onsubmit = async function(e) {
-            e.preventDefault();
-            const form = e.target;
-            const data = {
-                name: form.name.value,
-                manufacturer: form.manufacturer.value,
-                serial_number: form.serial_number.value
-            };
-            await fetch('/api/equipment' + (id ? '/' + id : ''), {
-                method: id ? 'PUT' : 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            closeModal();
-            fetchAndRender('Equipment', 'equipment-crud', ['id','name','manufacturer','serial_number'], '/api/equipment');
+    </form>`;
+    showModal('Equipment', formHtml);
+    document.getElementById('equipmentForm').onsubmit = async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = {
+            name: form.name.value,
+            manufacturer: form.manufacturer.value,
+            serial_number: form.serial_number.value
         };
+        await fetch('/api/equipment' + (id ? '/' + id : ''), {
+            method: id ? 'PUT' : 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        closeModal();
+        fetchAndRender('Equipment', 'equipment-crud', ['id','name','manufacturer','serial_number'], '/api/equipment');
+    };
+}
+async function editEquipment(id) { showEquipmentForm(id); }
+function deleteEquipment(id) {
+    if (confirm('Are you sure you want to delete this equipment?')) {
+        fetch(`/api/equipment/${id}`, { method: 'DELETE' })
+            .then(() => fetchAndRender('Equipment', 'equipment-crud', ['id','name','manufacturer','serial_number'], '/api/equipment'));
     }
-    async function editEquipment(id) { showEquipmentForm(id); }
-    function deleteEquipment(id) {
-        if (confirm('Are you sure you want to delete this equipment?')) {
-            fetch(`/api/equipment/${id}`, { method: 'DELETE' })
-                .then(() => fetchAndRender('Equipment', 'equipment-crud', ['id','name','manufacturer','serial_number'], '/api/equipment'));
-        }
-    }
-    async function showObservationForm(id = null) {
-        const [experiments, observation] = await Promise.all([
-            fetch('/api/experiments').then(r => r.json()),
-            id ? fetch(`/api/observations/${id}`).then(r => r.json()) : Promise.resolve(null)
-        ]);
+}
+async function showObservationForm(id = null) {
+    const [experiments, observation] = await Promise.all([
+        fetch('/api/experiments').then(r => r.json()),
+        id ? fetch(`/api/observations/${id}`).then(r => r.json()) : Promise.resolve(null)
+    ]);
         let formHtml = `<form id='observationForm' class="space-y-4">
             <div class="space-y-2">
                 <label class="block text-slate-300 font-medium">Experiment</label>
                 <select class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name='experiment_id' required>
-                    ${experiments.map(ex => `<option value='${ex.id}' ${observation && observation.experiment_id == ex.id ? 'selected' : ''}>${ex.title}</option>`).join('')}
-                </select>
-            </div>
+                ${experiments.map(ex => `<option value='${ex.id}' ${observation && observation.experiment_id == ex.id ? 'selected' : ''}>${ex.title}</option>`).join('')}
+            </select>
+        </div>
             <div class="space-y-2">
                 <label class="block text-slate-300 font-medium">Observation Date</label>
                 <input class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name='observation_date' type='date' required value='${observation ? observation.observation_date : ''}'>
@@ -547,41 +546,41 @@
                 <button type="button" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors shadow-sm hover:shadow" onclick="closeModal()">Cancel</button>
                 <button type="submit" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors shadow-sm hover:shadow">Save Changes</button>
             </div>
-        </form>`;
-        showModal('Observation', formHtml);
-        document.getElementById('observationForm').onsubmit = async function(e) {
-            e.preventDefault();
-            const form = e.target;
-            const data = {
-                experiment_id: form.experiment_id.value,
-                observation_date: form.observation_date.value,
-                data: form.data.value,
-                notes: form.notes.value
-            };
-            await fetch('/api/observations' + (id ? '/' + id : ''), {
-                method: id ? 'PUT' : 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            });
-            closeModal();
-            fetchAndRender('Observation', 'observations-crud', ['id','experiment_id','observation_date','data','notes'], '/api/observations');
+    </form>`;
+    showModal('Observation', formHtml);
+    document.getElementById('observationForm').onsubmit = async function(e) {
+        e.preventDefault();
+        const form = e.target;
+        const data = {
+            experiment_id: form.experiment_id.value,
+            observation_date: form.observation_date.value,
+            data: form.data.value,
+            notes: form.notes.value
         };
+        await fetch('/api/observations' + (id ? '/' + id : ''), {
+            method: id ? 'PUT' : 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(data)
+        });
+        closeModal();
+        fetchAndRender('Observation', 'observations-crud', ['id','experiment_id','observation_date','data','notes'], '/api/observations');
+    };
+}
+async function editObservation(id) { showObservationForm(id); }
+function deleteObservation(id) {
+    if (confirm('Are you sure you want to delete this observation?')) {
+        fetch(`/api/observations/${id}`, { method: 'DELETE' })
+            .then(() => fetchAndRender('Observation', 'observations-crud', ['id','experiment_id','observation_date','data','notes'], '/api/observations'));
     }
-    async function editObservation(id) { showObservationForm(id); }
-    function deleteObservation(id) {
-        if (confirm('Are you sure you want to delete this observation?')) {
-            fetch(`/api/observations/${id}`, { method: 'DELETE' })
-                .then(() => fetchAndRender('Observation', 'observations-crud', ['id','experiment_id','observation_date','data','notes'], '/api/observations'));
-        }
-    }
-    // --- Modal Helper ---
-    function showModal(title, content) {
-        let modal = document.getElementById('crudModal');
-        if (!modal) {
-            modal = document.createElement('div');
-            modal.id = 'crudModal';
+}
+// --- Modal Helper ---
+function showModal(title, content) {
+    let modal = document.getElementById('crudModal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'crudModal';
             modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm';
-            document.body.appendChild(modal);
+        document.body.appendChild(modal);
         }
         
         modal.innerHTML = `
@@ -592,18 +591,18 @@
         `;
         
         modal.style.display = 'flex';
-        modal.onclick = function(e) { if (e.target === modal) closeModal(); };
-    }
-    function closeModal() {
-        let modal = document.getElementById('crudModal');
-        if (modal) modal.style.display = 'none';
-    }
+    modal.onclick = function(e) { if (e.target === modal) closeModal(); };
+}
+function closeModal() {
+    let modal = document.getElementById('crudModal');
+    if (modal) modal.style.display = 'none';
+}
 
-    // Render all CRUD tables on load
-    fetchAndRender('Experiment', 'experiments-crud', ['id','title','description','start_date','end_date'], '/api/experiments');
-    fetchAndRender('Researcher', 'researchers-crud', ['id','name','email','institution'], '/api/researchers');
-    fetchAndRender('Equipment', 'equipment-crud', ['id','name','manufacturer','serial_number'], '/api/equipment');
-    fetchAndRender('Observation', 'observations-crud', ['id','experiment_id','observation_date','data','notes'], '/api/observations');
+// Render all CRUD tables on load
+fetchAndRender('Experiment', 'experiments-crud', ['id','title','description','start_date','end_date'], '/api/experiments');
+fetchAndRender('Researcher', 'researchers-crud', ['id','name','email','institution'], '/api/researchers');
+fetchAndRender('Equipment', 'equipment-crud', ['id','name','manufacturer','serial_number'], '/api/equipment');
+fetchAndRender('Observation', 'observations-crud', ['id','experiment_id','observation_date','data','notes'], '/api/observations');
 
     // Add this to your existing JavaScript
     function showSection(sectionName) {
@@ -629,6 +628,6 @@
 
     // Initialize with experiments section
     showSection('experiments');
-    </script>
+</script>
 </body>
 </html>

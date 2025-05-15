@@ -377,6 +377,7 @@
             } else {
                 tile.innerHTML = `<span class="bg-element-num">${element.number}</span><span class="bg-element-symbol">${element.symbol}</span>`;
                 tile.addEventListener('click', () => displayElementInfo(element));
+                tile.style.cursor = 'pointer';
             }
 
 
@@ -406,7 +407,7 @@
             elementInfoContainer.innerHTML = `
                 <!-- Large Element Display Tile (Left) -->
                 <div id="large-element-tile-display"
-                     class="bg-element element-tile-glow p-4 md:p-6 rounded-xl flex flex-col text-white relative items-center justify-around"
+                     class="bg-element element-tile-glow p-4 md:p-6 rounded-xl flex flex-col text-white relative items-center justify-around cursor-pointer"
                      style="width: clamp(280px, 30vw, 380px); aspect-ratio: 10/12; min-height:330px;">
 
                     <div class="flex justify-between w-full">
@@ -427,10 +428,8 @@
                      style="width: clamp(300px, 45vw, 520px); transform: perspective(800px) rotateY(-10deg);">
 
                     <div class="flex justify-between items-start mb-4">
-                        <div>
-                            <div class="flex items-baseline gap-2 sm:gap-3">
-                                <span class="text-lg sm:text-xl font-bold text-violet-300">${element.number}</span>
-                                <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white">${element.symbol}</h3>
+                        <div class="flex-1 text-center">
+                            <div class="flex items-center justify-center gap-2 sm:gap-3">
                                 <h4 class="text-xl sm:text-2xl md:text-3xl font-semibold text-violet-300">${element.name}</h4>
                             </div>
                             <p class="text-xs sm:text-sm text-slate-400 mt-1">${element.category}</p>
