@@ -1,0 +1,380 @@
+{
+  "info": {
+    "name": "Research Management System",
+    "description": "API collection for testing the Research Management System endpoints",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Experiments",
+      "description": "API endpoints for managing research experiments",
+      "item": [
+        {
+          "name": "Get All Experiments",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/experiments",
+              "host": ["{{base_url}}"],
+              "path": ["api", "experiments"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Experiment by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/experiments/{{experiment_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "experiments", "{{experiment_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Experiment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/experiments",
+              "host": ["{{base_url}}"],
+              "path": ["api", "experiments"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"New Research Experiment\",\n    \"description\": \"This is a test experiment\",\n    \"start_date\": \"2024-03-15\",\n    \"end_date\": \"2024-04-15\",\n    \"researcher_ids\": [1, 2],\n    \"equipment_ids\": [1, 2]\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Experiment",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/experiments/{{experiment_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "experiments", "{{experiment_id}}"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Updated Research Experiment\",\n    \"description\": \"This is an updated test experiment\",\n    \"start_date\": \"2024-03-15\",\n    \"end_date\": \"2024-04-15\",\n    \"researcher_ids\": [1, 2],\n    \"equipment_ids\": [1, 2]\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Experiment",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/experiments/{{experiment_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "experiments", "{{experiment_id}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Researchers",
+      "description": "API endpoints for managing researchers",
+      "item": [
+        {
+          "name": "Get All Researchers",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/researchers",
+              "host": ["{{base_url}}"],
+              "path": ["api", "researchers"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Researcher by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/researchers/{{researcher_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "researchers", "{{researcher_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Researcher",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/researchers",
+              "host": ["{{base_url}}"],
+              "path": ["api", "researchers"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john@example.com\",\n    \"institution\": \"Research University\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Researcher",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/researchers/{{researcher_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "researchers", "{{researcher_id}}"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"John Doe Updated\",\n    \"email\": \"john.updated@example.com\",\n    \"institution\": \"Updated University\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Researcher",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/researchers/{{researcher_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "researchers", "{{researcher_id}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Equipment",
+      "description": "API endpoints for managing laboratory equipment",
+      "item": [
+        {
+          "name": "Get All Equipment",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/equipment",
+              "host": ["{{base_url}}"],
+              "path": ["api", "equipment"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Equipment by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/equipment/{{equipment_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "equipment", "{{equipment_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Equipment",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/equipment",
+              "host": ["{{base_url}}"],
+              "path": ["api", "equipment"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Microscope X1000\",\n    \"manufacturer\": \"LabTech\",\n    \"serial_number\": \"MT-2024-001\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Equipment",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/equipment/{{equipment_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "equipment", "{{equipment_id}}"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"name\": \"Microscope X2000\",\n    \"manufacturer\": \"LabTech Pro\",\n    \"serial_number\": \"MT-2024-002\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Equipment",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/equipment/{{equipment_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "equipment", "{{equipment_id}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Observations",
+      "description": "API endpoints for managing experiment observations",
+      "item": [
+        {
+          "name": "Get All Observations",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/observations",
+              "host": ["{{base_url}}"],
+              "path": ["api", "observations"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Observation by ID",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "{{base_url}}/api/observations/{{observation_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "observations", "{{observation_id}}"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create Observation",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/observations",
+              "host": ["{{base_url}}"],
+              "path": ["api", "observations"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"experiment_id\": 1,\n    \"observation_date\": \"2024-03-15\",\n    \"data\": \"Sample observation data\",\n    \"notes\": \"Additional notes about the observation\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Observation",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/observations/{{observation_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "observations", "{{observation_id}}"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"experiment_id\": 1,\n    \"observation_date\": \"2024-03-16\",\n    \"data\": \"Updated observation data\",\n    \"notes\": \"Updated notes about the observation\"\n}"
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Observation",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{base_url}}/api/observations/{{observation_id}}",
+              "host": ["{{base_url}}"],
+              "path": ["api", "observations", "{{observation_id}}"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000",
+      "type": "string"
+    },
+    {
+      "key": "experiment_id",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "researcher_id",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "equipment_id",
+      "value": "1",
+      "type": "string"
+    },
+    {
+      "key": "observation_id",
+      "value": "1",
+      "type": "string"
+    }
+  ]
+} 
