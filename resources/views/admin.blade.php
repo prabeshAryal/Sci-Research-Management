@@ -65,35 +65,40 @@
         }
 
         .btn {
-            @apply px-4 py-2 rounded-lg font-medium transition-colors duration-200 inline-flex items-center justify-center;
+            @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 inline-flex items-center justify-center;
         }
 
         .btn-sm {
             @apply px-3 py-1.5 text-sm;
         }
 
-        .btn-success {
-            @apply bg-emerald-600 hover:bg-emerald-700 text-white;
-        }
-
         .btn-primary {
-            @apply bg-indigo-600 hover:bg-indigo-700 text-white;
+            @apply bg-blue-600 hover:bg-blue-700 text-white shadow-sm hover:shadow;
         }
 
         .btn-danger {
-            @apply bg-red-600 hover:bg-red-700 text-white;
+            @apply bg-red-600 hover:bg-red-700 text-white shadow-sm hover:shadow;
         }
 
         .btn-secondary {
-            @apply bg-slate-600 hover:bg-slate-700 text-white;
+            @apply bg-slate-600 hover:bg-slate-700 text-white shadow-sm hover:shadow;
+        }
+
+        .btn-success {
+            @apply bg-emerald-600 hover:bg-emerald-700 text-white shadow-sm hover:shadow;
         }
 
         .form-control, .form-select {
-            @apply w-full px-4 py-2.5 rounded-lg bg-slate-700/50 border border-slate-600 text-slate-200 placeholder-slate-400;
+            @apply w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400;
+            transition: all 0.2s ease;
+        }
+
+        .form-control:hover, .form-select:hover {
+            @apply border-slate-500;
         }
 
         .form-control:focus, .form-select:focus {
-            @apply outline-none ring-2 ring-indigo-500/50 border-indigo-500/50;
+            @apply outline-none ring-2 ring-indigo-500/50 border-indigo-500 bg-slate-600;
         }
 
         .form-label {
@@ -105,7 +110,11 @@
         }
 
         #crudModal > div {
-            @apply bg-slate-800 border border-indigo-500/20 rounded-xl shadow-xl p-6 min-w-[400px] max-w-[90vw] max-h-[90vh] overflow-y-auto;
+            @apply bg-slate-800 border border-indigo-500/20 rounded-xl shadow-xl p-6 min-w-[400px] max-w-[90vw] max-h-[90vh] overflow-y-auto mx-auto;
+            transform: translate(-50%, -50%);
+            position: fixed;
+            top: 50%;
+            left: 50%;
         }
 
         #crudModal h4 {
@@ -162,7 +171,7 @@
         }
     </style>
 </head>
-<body>
+<body class="bg-black text-slate-200 min-h-screen">
     <!-- Navigation Header -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg border-b border-indigo-500/20">
         <div class="container mx-auto px-4 py-2">
@@ -298,33 +307,44 @@
         try {
             const res = await fetch(apiUrl);
             const data = await res.json();
-            let html = `<div class="overflow-x-auto">
-                <table class="table">
-                    <thead>
-                        <tr>`;
-            fields.forEach(f => html += `<th>${f}</th>`);
-            html += `<th>Actions</th></tr></thead><tbody>`;
+            let html = `
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-700/50">
+                                ${fields.map(f => `<th class="px-6 py-4 text-slate-200 font-semibold text-center border-b border-slate-600">${f}</th>`).join('')}
+                                <th class="px-6 py-4 text-slate-200 font-semibold text-center border-b border-slate-600">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
             
             data.forEach(item => {
-                html += '<tr>';
-                fields.forEach(f => html += `<td>${item[f] ?? ''}</td>`);
-                html += `<td class="action-buttons">
-                    <button class="btn btn-primary btn-sm" onclick="edit${entity}(${item.id})">
-                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
-                        </svg>
-                        Edit
-                    </button>
-                    <button class="btn btn-danger btn-sm" onclick="delete${entity}(${item.id})">
-                        <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
-                        </svg>
-                        Delete
-                    </button>
-                </td>`;
-                html += '</tr>';
+                html += `
+                    <tr class="hover:bg-slate-700/30 transition-colors">
+                        ${fields.map(f => `<td class="px-6 py-4 border-b border-slate-700/50 text-slate-300 text-center align-middle">${item[f] ?? ''}</td>`).join('')}
+                        <td class="px-6 py-4 border-b border-slate-700/50 text-center">
+                            <div class="flex items-center justify-center space-x-2">
+                                <button onclick="edit${entity}(${item.id})" class="inline-flex items-center px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors shadow-sm hover:shadow">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                                    </svg>
+                                    Edit
+                                </button>
+                                <button onclick="delete${entity}(${item.id})" class="inline-flex items-center px-3 py-1.5 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors shadow-sm hover:shadow">
+                                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                                    </svg>
+                                    Delete
+                                </button>
+                            </div>
+                        </td>
+                    </tr>`;
             });
-            html += '</tbody></table></div>';
+            
+            html += `
+                        </tbody>
+                    </table>
+                </div>`;
             container.innerHTML = html;
         } catch (e) {
             container.innerHTML = '<div class="text-center text-red-500">Failed to load data.</div>';
@@ -341,37 +361,37 @@
         
         let formHtml = `
             <form id="experimentForm" class="space-y-4">
-                <div class="form-group">
-                    <label class="form-label">Title</label>
-                    <input class="form-control" name="title" placeholder="Enter title" required value="${experiment ? experiment.title : ''}">
+                <div class="space-y-2">
+                    <label class="block text-slate-300 font-medium">Title</label>
+                    <input class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name="title" placeholder="Enter title" required value="${experiment ? experiment.title : ''}">
                 </div>
-                <div class="form-group">
-                    <label class="form-label">Description</label>
-                    <textarea class="form-control" name="description" placeholder="Enter description" rows="3">${experiment ? (experiment.description || '') : ''}</textarea>
+                <div class="space-y-2">
+                    <label class="block text-slate-300 font-medium">Description</label>
+                    <textarea class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name="description" placeholder="Enter description" rows="3">${experiment ? (experiment.description || '') : ''}</textarea>
                 </div>
-                <div class="form-group">
-                    <label class="form-label">Start Date</label>
-                    <input class="form-control" name="start_date" type="date" required value="${experiment ? experiment.start_date : ''}">
+                <div class="space-y-2">
+                    <label class="block text-slate-300 font-medium">Start Date</label>
+                    <input class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name="start_date" type="date" required value="${experiment ? experiment.start_date : ''}">
                 </div>
-                <div class="form-group">
-                    <label class="form-label">End Date</label>
-                    <input class="form-control" name="end_date" type="date" value="${experiment ? (experiment.end_date || '') : ''}">
+                <div class="space-y-2">
+                    <label class="block text-slate-300 font-medium">End Date</label>
+                    <input class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name="end_date" type="date" value="${experiment ? (experiment.end_date || '') : ''}">
                 </div>
-                <div class="form-group">
-                    <label class="form-label">Researchers</label>
-                    <select class="form-select" name="researcher_ids" multiple required>
+                <div class="space-y-2">
+                    <label class="block text-slate-300 font-medium">Researchers</label>
+                    <select class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name="researcher_ids" multiple required>
                         ${researchers.map(r => `<option value="${r.id}" ${experiment && experiment.researchers.some(er => er.id === r.id) ? 'selected' : ''}>${r.name}</option>`).join('')}
                     </select>
                 </div>
-                <div class="form-group">
-                    <label class="form-label">Equipment</label>
-                    <select class="form-select" name="equipment_ids" multiple required>
+                <div class="space-y-2">
+                    <label class="block text-slate-300 font-medium">Equipment</label>
+                    <select class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name="equipment_ids" multiple required>
                         ${equipment.map(eq => `<option value="${eq.id}" ${experiment && experiment.equipment.some(ee => ee.id === eq.id) ? 'selected' : ''}>${eq.name}</option>`).join('')}
                     </select>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                <div class="flex justify-end space-x-3 mt-6 pt-4 border-t border-slate-700">
+                    <button type="button" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors shadow-sm hover:shadow" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors shadow-sm hover:shadow">Save Changes</button>
                 </div>
             </form>`;
         
@@ -408,12 +428,23 @@
         if (id) {
             researcher = await fetch(`/api/researchers/${id}`).then(r => r.json());
         }
-        let formHtml = `<form id='researcherForm'>
-            <div class='mb-2'><input class='form-control' name='name' placeholder='Name' required value='${researcher ? researcher.name : ''}'></div>
-            <div class='mb-2'><input class='form-control' name='email' placeholder='Email' required type='email' value='${researcher ? researcher.email : ''}'></div>
-            <div class='mb-2'><input class='form-control' name='institution' placeholder='Institution' value='${researcher ? (researcher.institution || '') : ''}'></div>
-            <button type='submit' class='btn btn-success'>Save</button>
-            <button type='button' class='btn btn-secondary' onclick='closeModal()'>Cancel</button>
+        let formHtml = `<form id='researcherForm' class="space-y-4">
+            <div class="space-y-2">
+                <label class="block text-slate-300 font-medium">Name</label>
+                <input class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name='name' placeholder='Name' required value='${researcher ? researcher.name : ''}'>
+            </div>
+            <div class="space-y-2">
+                <label class="block text-slate-300 font-medium">Email</label>
+                <input class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name='email' placeholder='Email' required type='email' value='${researcher ? researcher.email : ''}'>
+            </div>
+            <div class="space-y-2">
+                <label class="block text-slate-300 font-medium">Institution</label>
+                <input class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name='institution' placeholder='Institution' value='${researcher ? (researcher.institution || '') : ''}'>
+            </div>
+            <div class="flex justify-end space-x-3 mt-6 pt-4 border-t border-slate-700">
+                <button type="button" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors shadow-sm hover:shadow" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors shadow-sm hover:shadow">Save Changes</button>
+            </div>
         </form>`;
         showModal('Researcher', formHtml);
         document.getElementById('researcherForm').onsubmit = async function(e) {
@@ -445,12 +476,23 @@
         if (id) {
             equipment = await fetch(`/api/equipment/${id}`).then(r => r.json());
         }
-        let formHtml = `<form id='equipmentForm'>
-            <div class='mb-2'><input class='form-control' name='name' placeholder='Name' required value='${equipment ? equipment.name : ''}'></div>
-            <div class='mb-2'><input class='form-control' name='manufacturer' placeholder='Manufacturer' value='${equipment ? (equipment.manufacturer || '') : ''}'></div>
-            <div class='mb-2'><input class='form-control' name='serial_number' placeholder='Serial Number' required value='${equipment ? equipment.serial_number : ''}'></div>
-            <button type='submit' class='btn btn-success'>Save</button>
-            <button type='button' class='btn btn-secondary' onclick='closeModal()'>Cancel</button>
+        let formHtml = `<form id='equipmentForm' class="space-y-4">
+            <div class="space-y-2">
+                <label class="block text-slate-300 font-medium">Name</label>
+                <input class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name='name' placeholder='Name' required value='${equipment ? equipment.name : ''}'>
+            </div>
+            <div class="space-y-2">
+                <label class="block text-slate-300 font-medium">Manufacturer</label>
+                <input class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name='manufacturer' placeholder='Manufacturer' value='${equipment ? (equipment.manufacturer || '') : ''}'>
+            </div>
+            <div class="space-y-2">
+                <label class="block text-slate-300 font-medium">Serial Number</label>
+                <input class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name='serial_number' placeholder='Serial Number' required value='${equipment ? equipment.serial_number : ''}'>
+            </div>
+            <div class="flex justify-end space-x-3 mt-6 pt-4 border-t border-slate-700">
+                <button type="button" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors shadow-sm hover:shadow" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors shadow-sm hover:shadow">Save Changes</button>
+            </div>
         </form>`;
         showModal('Equipment', formHtml);
         document.getElementById('equipmentForm').onsubmit = async function(e) {
@@ -478,23 +520,33 @@
         }
     }
     async function showObservationForm(id = null) {
-        // Fetch experiments for select options
         const [experiments, observation] = await Promise.all([
             fetch('/api/experiments').then(r => r.json()),
             id ? fetch(`/api/observations/${id}`).then(r => r.json()) : Promise.resolve(null)
         ]);
-        let formHtml = `<form id='observationForm'>
-            <div class='mb-2'>
-                <label>Experiment</label>
-                <select class='form-select' name='experiment_id' required>
+        let formHtml = `<form id='observationForm' class="space-y-4">
+            <div class="space-y-2">
+                <label class="block text-slate-300 font-medium">Experiment</label>
+                <select class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name='experiment_id' required>
                     ${experiments.map(ex => `<option value='${ex.id}' ${observation && observation.experiment_id == ex.id ? 'selected' : ''}>${ex.title}</option>`).join('')}
                 </select>
             </div>
-            <div class='mb-2'><input class='form-control' name='observation_date' type='date' required value='${observation ? observation.observation_date : ''}'></div>
-            <div class='mb-2'><input class='form-control' name='data' placeholder='Data' required value='${observation ? observation.data : ''}'></div>
-            <div class='mb-2'><input class='form-control' name='notes' placeholder='Notes' value='${observation ? (observation.notes || '') : ''}'></div>
-            <button type='submit' class='btn btn-success'>Save</button>
-            <button type='button' class='btn btn-secondary' onclick='closeModal()'>Cancel</button>
+            <div class="space-y-2">
+                <label class="block text-slate-300 font-medium">Observation Date</label>
+                <input class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name='observation_date' type='date' required value='${observation ? observation.observation_date : ''}'>
+            </div>
+            <div class="space-y-2">
+                <label class="block text-slate-300 font-medium">Data</label>
+                <input class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name='data' placeholder='Data' required value='${observation ? observation.data : ''}'>
+            </div>
+            <div class="space-y-2">
+                <label class="block text-slate-300 font-medium">Notes</label>
+                <input class="w-full px-4 py-2.5 rounded-lg bg-slate-700 border border-slate-600 text-slate-200 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/50 focus:border-indigo-500" name='notes' placeholder='Notes' value='${observation ? (observation.notes || '') : ''}'>
+            </div>
+            <div class="flex justify-end space-x-3 mt-6 pt-4 border-t border-slate-700">
+                <button type="button" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg transition-colors shadow-sm hover:shadow" onclick="closeModal()">Cancel</button>
+                <button type="submit" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg transition-colors shadow-sm hover:shadow">Save Changes</button>
+            </div>
         </form>`;
         showModal('Observation', formHtml);
         document.getElementById('observationForm').onsubmit = async function(e) {
@@ -528,13 +580,14 @@
         if (!modal) {
             modal = document.createElement('div');
             modal.id = 'crudModal';
+            modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm';
             document.body.appendChild(modal);
         }
         
         modal.innerHTML = `
-            <div>
-                <h4>${title}</h4>
-                <div class="modal-content">${content}</div>
+            <div class="bg-slate-800/90 backdrop-blur-lg border border-indigo-500/20 rounded-xl shadow-2xl p-8 min-w-[600px] max-w-[90vw] max-h-[90vh] overflow-y-auto mx-auto transform -translate-x-1/2 -translate-y-1/2 fixed top-1/2 left-1/2">
+                <h4 class="text-xl font-semibold text-indigo-300 mb-6 pb-4 border-b border-slate-700">${title}</h4>
+                <div class="space-y-4">${content}</div>
             </div>
         `;
         
