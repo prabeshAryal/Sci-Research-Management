@@ -43,10 +43,10 @@ The system provides the following RESTful API endpoints:
 
 ## System Interface
 
-### Home Page
-The system's home page provides quick access to all major features and a clean, modern interface.
+### Landing Page
+The system's landing page provides a modern, intuitive interface with quick access to all major features.
 
-![Home Page](misc/home.png)
+![Landing Page](misc/landing.png)
 
 ### Admin Panel
 The admin panel provides a user-friendly interface for managing:
@@ -65,24 +65,26 @@ The system includes a built-in interactive API documentation interface that allo
 - Handle URL parameters and request bodies
 - View formatted API responses
 
-![API Documentation Interface](misc/api-docs.png)
+![API Documentation](misc/api-lists.png)
 
-### API Testing Interface
+### Interactive Elements
+The system features various interactive elements that enhance user experience:
+- Dynamic form inputs
+- Real-time validation
+- Responsive design elements
+- Modern UI components
+
+![Interactive Elements](misc/interactive-elements.png)
+
+### In-Browser Terminal
 The interactive terminal interface for testing API endpoints provides:
 - Real-time curl command generation
 - Parameter input handling
 - Request body editing
 - Formatted response display
+- Blurred background overlay for focus
 
-![API Testing Interface](misc/api-testing.png)
-
-### Database Schema
-The system uses a well-structured database schema to maintain relationships between:
-- Experiments and Researchers
-- Equipment and Experiments
-- Observations and Experiments
-
-![Database Schema](misc/database.png)
+![In-Browser Terminal](misc/in-browser-terminal.png)
 
 ## Installation
 
@@ -124,7 +126,7 @@ php artisan serve
 
 ## Usage
 
-1. Access the home page at `/`
+1. Access the landing page at `/`
 2. Navigate to the API documentation at `/api-list`
 3. Use the interactive interface to test API endpoints
 4. Access the admin panel at `/admin` for full system management

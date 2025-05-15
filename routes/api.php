@@ -11,7 +11,7 @@ use App\Http\Controllers\AllObservationsController;
 Route::middleware('api')->group(function () {
     // Documentation route - lists all available API routes
     Route::get('/', [ApiRoutesController::class, 'index']);
-    // Route to list all API routes
+    // Route to list all API routes yep
     Route::get('routes', function () {
         $routes = collect(\Route::getRoutes())->map(function ($route) {
             return [
