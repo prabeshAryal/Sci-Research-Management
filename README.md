@@ -1,61 +1,176 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Research Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A comprehensive backend system for managing research experiments, researchers, equipment, and observations. Built with Laravel, this system provides a robust API for handling all aspects of research management.
 
-## About Laravel
+## Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **Experiment Management**: Create, read, update, and delete research experiments
+- **Researcher Profiles**: Manage researcher information and their associated experiments
+- **Equipment Tracking**: Keep track of laboratory equipment and their usage
+- **Observation Records**: Document and manage experiment observations
+- **Interactive API Documentation**: Built-in API testing interface with real-time curl command generation
+- **Admin Panel**: User-friendly interface for managing all aspects of the system
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Technology Stack
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- **Backend Framework**: Laravel (PHP)
+- **Database**: MySQL
+- **Frontend**: Blade Templates with Tailwind CSS
+- **API Documentation**: Custom-built interactive documentation
 
-## Learning Laravel
+## API Endpoints
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+The system provides the following RESTful API endpoints:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Experiments
+- `GET /api/experiments` - List all experiments
+- `GET /api/experiments/{id}` - Get experiment details
+- `POST /api/experiments` - Create a new experiment
+- `PUT /api/experiments/{id}` - Update an experiment
+- `DELETE /api/experiments/{id}` - Delete an experiment
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Researchers
+- `GET /api/researchers/{id}` - Get researcher details
+- `GET /api/researchers/{id}/experiments` - Get experiments by researcher
 
-## Laravel Sponsors
+### Equipment
+- `GET /api/equipment/{id}` - Get equipment details
+- `GET /api/equipment/{id}/experiments` - Get experiments using specific equipment
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Observations
+- `GET /api/observations/{id}` - Get observation details
+- `GET /api/experiments/{id}/observations` - Get observations for an experiment
 
-### Premium Partners
+## System Interface
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Home Page
+The system's home page provides quick access to all major features and a clean, modern interface.
+
+![Home Page](misc/home.png)
+
+### Admin Panel
+The admin panel provides a user-friendly interface for managing:
+- Experiments
+- Researchers
+- Equipment
+- Observations
+
+![Admin Panel](misc/admin-panel.png)
+
+### API Documentation
+The system includes a built-in interactive API documentation interface that allows you to:
+- View all available API endpoints
+- Test endpoints directly from the browser
+- Generate curl commands in real-time
+- Handle URL parameters and request bodies
+- View formatted API responses
+
+![API Documentation Interface](misc/api-docs.png)
+
+### API Testing Interface
+The interactive terminal interface for testing API endpoints provides:
+- Real-time curl command generation
+- Parameter input handling
+- Request body editing
+- Formatted response display
+
+![API Testing Interface](misc/api-testing.png)
+
+### Database Schema
+The system uses a well-structured database schema to maintain relationships between:
+- Experiments and Researchers
+- Equipment and Experiments
+- Observations and Experiments
+
+![Database Schema](misc/database.png)
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone [repository-url]
+```
+
+2. Install dependencies:
+```bash
+composer install
+```
+
+3. Configure your environment:
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+4. Set up your database in `.env`:
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=research_management
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
+
+5. Run migrations:
+```bash
+php artisan migrate
+```
+
+6. Start the development server:
+```bash
+php artisan serve
+```
+
+## Usage
+
+1. Access the home page at `/`
+2. Navigate to the API documentation at `/api-list`
+3. Use the interactive interface to test API endpoints
+4. Access the admin panel at `/admin` for full system management
+
+## API Testing
+
+The system provides an interactive terminal interface for testing API endpoints:
+
+1. Click "Try it out" on any API endpoint
+2. Enter required parameters (if any)
+3. Add request body for POST/PUT/PATCH requests
+4. Click "Execute Request" to test the endpoint
+5. View the formatted response
+
+## Project Structure
+
+```
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   └── Middleware/
+│   └── Models/
+├── database/
+│   └── migrations/
+├── resources/
+│   └── views/
+├── routes/
+│   ├── api.php
+│   └── web.php
+└── tests/
+```
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a new Pull Request
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- Laravel Framework
+- Tailwind CSS
+- All contributors and users of the system
