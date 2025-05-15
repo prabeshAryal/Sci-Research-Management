@@ -16,8 +16,7 @@
             align-items: center;
             min-height: 100vh;
             padding: 1rem;
-            overflow-x: hidden; /* Keep this */
-            /* overflow-y will be managed by JS when modal is open/closed */
+            overflow-x: hidden;
         }
         .container {
             max-width: 95%;
@@ -32,15 +31,15 @@
                         0 0 5px 1px rgba(204, 102, 255, 0.3) inset;
         }
         .bg-element {
-            background-color: rgba(30, 30, 40, 0.5);
+            background-color: rgba(30, 30, 40, 0.5); /* Darker, more transparent */
             border: 2px solid;
-            border-color: #6200EA;
+            border-color: #6200EA; /* Purple border */
             opacity: 0.7;
             transition: all 0.3s ease;
             transform: perspective(800px) rotateY(-10deg);
-            min-width: 50px; /* Ensure minimum width for elements */
-            min-height: 50px; /* Ensure minimum height for elements */
-            display: flex; /* Use flexbox for centering content */
+            min-width: 50px;
+            min-height: 50px;
+            display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
@@ -48,186 +47,118 @@
         }
         .bg-element:hover {
             opacity: 0.9;
-            background-color: rgba(50, 50, 60, 0.7);
+            background-color: rgba(50, 50, 60, 0.7); /* Slightly lighter on hover */
             transform: perspective(800px) rotateY(-10deg) scale(1.05);
-            border-color: #00FFFF;
+            border-color: #00FFFF; /* Cyan border on hover */
             box-shadow: 0 0 10px 2px rgba(0, 255, 255, 0.5);
         }
         .bg-element-symbol {
-            font-size: 1rem; /* Adjusted font size */
+            font-size: 1rem;
             font-weight: 700;
             color: #ffffff;
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
         }
         .bg-element-num {
-            font-size: 0.7rem; /* Adjusted font size */
+            font-size: 0.7rem;
             color: #eeeeee;
             text-shadow: 0 0 3px rgba(255, 255, 255, 0.3);
         }
         .atom {
-            width: 100px; /* Adjusted size */
-            height: 100px; /* Adjusted size */
-            border-radius: 50%;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 1rem auto;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8),
-                        inset 0 0 20px rgba(255, 255, 255, 0.1);
+            width: 100px; height: 100px;
+            border-radius: 50%; position: relative; display: flex;
+            justify-content: center; align-items: center; margin: 1rem auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.8), inset 0 0 20px rgba(255,255,255,0.1);
             background: radial-gradient(circle at center, #222, #000);
             transform: perspective(800px) rotateY(-10deg);
         }
         .nucleus {
-            width: 20px; /* Adjusted size */
-            height: 20px; /* Adjusted size */
-            background-color: #ff4081;
-            border-radius: 50%;
-            position: relative;
-            z-index: 1;
-            box-shadow: 0 0 6px 1px rgba(255, 64, 129, 0.7); /* Adjusted shadow */
+            width: 20px; height: 20px; background-color: #ff4081;
+            border-radius: 50%; position: relative; z-index: 1;
+            box-shadow: 0 0 6px 1px rgba(255,64,129,0.7);
         }
-        .nucleus::before, .nucleus::after {
-            content: '';
-            position: absolute;
-            border-radius: 50%;
-        }
-        .nucleus::before {
-            width: 10px; height: 10px; background-color: #42a5f5; top: 2px; left: 2px; /* Adjusted position */
-            box-shadow: 0 0 4px 1px rgba(66, 165, 245, 0.5); /* Adjusted shadow */
-        }
-        .nucleus::after {
-            width: 8px; height: 8px; background-color: #f44336; bottom: 3px; right: 3px; /* Adjusted position */
-            box-shadow: 0 0 4px 1px rgba(244, 67, 54, 0.5); /* Adjusted shadow */
-        }
-        .electron-orbit {
-            position: absolute;
-            border-radius: 50%;
-            border: 1px solid rgba(156, 39, 176, 0.5);
-            animation: orbit-rotation 5s linear infinite;
-        }
-        @keyframes orbit-rotation {
-            from {
-                transform: rotate(0deg);
-            }
-            to{
-                transform: rotate(360deg);
-            }
-        }
-        .electron-orbit:nth-child(1) { width: 50px; height: 50px; } /* Adjusted size */
-        .electron-orbit:nth-child(2) { width: 80px; height: 80px; } /* Adjusted size */
-        .electron-orbit:nth-child(3) { width: 110px; height: 110px; } /* Adjusted size */
-        .electron {
-            width: 8px; /* Adjusted size */
-            height: 8px; /* Adjusted size */
-            background-color: #b388ff;
-            border-radius: 50%;
-            position: absolute;
-            box-shadow: 0 0 5px 1px rgba(179, 136, 255, 0.4); /* Adjusted shadow */
-        }
-        .electron-orbit:nth-child(1) .electron { top: -4px; left: calc(50% - 4px); } /* Adjusted position */
-        .electron-orbit:nth-child(2) .electron { bottom: -4px; left: calc(50% - 4px); transform: rotate(45deg); transform-origin: 36px 36px;} /* Adjusted position */
-        .electron-orbit:nth-child(3) .electron { top: calc(50% - 4px); right: -4px; transform: rotate(-30deg); transform-origin: 48px 0px;} /* Adjusted position */
-        ::-webkit-scrollbar {
-            width: 8px; /* Adjusted scrollbar width */
-        }
-        ::-webkit-scrollbar-track {
-            background: #000;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #9c27b0;
-            border-radius: 5px;
-            box-shadow: 0 0 4px rgba(156, 39, 176, 0.3); /* Adjusted shadow */
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #ba68c8;
-        }
+        .nucleus::before, .nucleus::after { content: ''; position: absolute; border-radius: 50%; }
+        .nucleus::before { width: 10px; height: 10px; background-color: #42a5f5; top: 2px; left: 2px; box-shadow: 0 0 4px 1px rgba(66,165,245,0.5); }
+        .nucleus::after { width: 8px; height: 8px; background-color: #f44336; bottom: 3px; right: 3px; box-shadow: 0 0 4px 1px rgba(244,67,54,0.5); }
+        .electron-orbit { position: absolute; border-radius: 50%; border: 1px solid rgba(156,39,176,0.5); animation: orbit-rotation 5s linear infinite; }
+        @keyframes orbit-rotation { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .electron-orbit:nth-child(1) { width: 50px; height: 50px; }
+        .electron-orbit:nth-child(2) { width: 80px; height: 80px; }
+        .electron-orbit:nth-child(3) { width: 110px; height: 110px; }
+        .electron { width: 8px; height: 8px; background-color: #b388ff; border-radius: 50%; position: absolute; box-shadow: 0 0 5px 1px rgba(179,136,255,0.4); }
+        .electron-orbit:nth-child(1) .electron { top: -4px; left: calc(50% - 4px); }
+        .electron-orbit:nth-child(2) .electron { bottom: -4px; left: calc(50% - 4px); transform: rotate(45deg); transform-origin: 36px 36px; }
+        .electron-orbit:nth-child(3) .electron { top: calc(50% - 4px); right: -4px; transform: rotate(-30deg); transform-origin: 48px 0px; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #000; }
+        ::-webkit-scrollbar-thumb { background: #9c27b0; border-radius: 5px; box-shadow: 0 0 4px rgba(156,39,176,0.3); }
+        ::-webkit-scrollbar-thumb:hover { background: #ba68c8; }
+
         #periodic-table-container {
             transform: perspective(800px) rotateX(10deg);
-            transition: all 0.2s ease;
-            max-height: 70vh;
-            overflow-y: auto;
-            display: grid;
-            grid-template-columns: repeat(18, minmax(30px, 1fr)); /* Use minmax and fr */
-            gap: 0.1rem; /* Reduced gap */
-            width: 100%;
+            transition: filter 0.3s ease, opacity 0.3s ease; /* Added transition for blur */
+            max-height: 70vh; overflow-y: auto; display: grid;
+            grid-template-columns: repeat(18, minmax(30px, 1fr));
+            gap: 0.1rem; width: 100%;
         }
-        /* MODIFIED: Styles for element-info-container as an overlay */
+
         #element-info-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(10, 10, 20, 0.85); /* Backdrop color */
-            z-index: 100; /* Ensure it's on top */
-            display: none; /* Initially hidden, controlled by JS */
-            align-items: center; /* Vertically center the info card */
-            justify-content: center; /* Horizontally center the info card */
-            padding: 1rem; /* Padding around the info card */
-            overflow-y: auto; /* Allow scrolling if info card is too tall */
-            /* Removed: transform: perspective(800px) rotateX(10deg); */
-            /* Removed: relative, z-10, mt-8 md:mt-16 from Tailwind classes effectively */
+            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+            background-color: rgba(10, 10, 20, 0.85);
+            z-index: 100; display: none; /* Toggled by JS */
+            align-items: center; justify-content: center;
+            padding: 2rem 1rem; /* Default padding */
+            gap: 2rem; /* Gap between the two cards */
+            overflow-y: auto; /* For scrolling when stacked and content overflows */
+            flex-direction: row; /* Default for larger screens */
         }
+
         .blurred {
-            filter: blur(5px);
-            opacity: 0.3;
-            pointer-events: none; /* Prevent interaction with blurred content */
-            transition: filter 0.3s ease, opacity 0.3s ease;
+            filter: blur(5px); opacity: 0.3; pointer-events: none;
         }
-        /* Empty cells for the gap in the main table */
-        #periodic-table-container div:nth-child(57), /* La position */
-        #periodic-table-container div:nth-child(58),
-        #periodic-table-container div:nth-child(59),
-        #periodic-table-container div:nth-child(60),
-        #periodic-table-container div:nth-child(61),
-        #periodic-table-container div:nth-child(62),
-        #periodic-table-container div:nth-child(63),
-        #periodic-table-container div:nth-child(64),
-        #periodic-table-container div:nth-child(65),
-        #periodic-table-container div:nth-child(66),
-        #periodic-table-container div:nth-child(67),
-        #periodic-table-container div:nth-child(68),
-        #periodic-table-container div:nth-child(69),
-        #periodic-table-container div:nth-child(70),
-        #periodic-table-container div:nth-child(71) {
-            background-color: transparent !important; /* Ensure override */
-            border: none !important; /* Ensure override */
+        .lanthanide-row, .actinide-row {
+            display: grid; grid-template-columns: repeat(15, minmax(30px, 1fr));
+            gap: 0.1rem; margin-top: 0.5rem;
+            transition: filter 0.3s ease, opacity 0.3s ease; /* Added transition for blur */
+        }
+        /* For Lanthanide/Actinide wrapper divs */
+        #lanthanide-row-wrapper, #actinide-row-wrapper {
+            transition: filter 0.3s ease, opacity 0.3s ease; /* Added transition for blur */
+        }
+
+        /* Responsive stacking for the two info cards */
+        @media (max-width: 900px) { /* Adjust breakpoint as needed */
+            #element-info-container {
+                flex-direction: column;
+                padding: 1rem;
+                gap: 1.5rem;
+            }
+            /* Individual card styles will use clamp for width, so direct override might not be needed
+               unless clamp values are not suitable for stacked view. */
+             #detailed-info-card {
+                max-height: 60vh; /* Adjust max height for info card when stacked */
+             }
+             /* Make large display tile symbol smaller on mobile */
+             #large-element-tile-display .element-symbol-large {
+                font-size: 5rem; /* Tailwind: text-7xl */
+             }
+        }
+         @media (max-width: 480px) {
+             #large-element-tile-display .element-symbol-large {
+                font-size: 4rem; /* Tailwind: text-6xl */
+             }
+             #large-element-tile-display .element-name-large {
+                font-size: 1.25rem; /* Tailwind: text-xl */
+             }
+         }
+
+
+        /* Empty cells for the gap - kept for clarity, ensure they don't interfere */
+        #periodic-table-container div[style*="grid-column-start: 4; grid-column-end: 15;"] {
+            background-color: transparent !important;
+            border: none !important;
             pointer-events: none;
         }
-        #periodic-table-container div:nth-child(91), /* Ac position */
-        #periodic-table-container div:nth-child(92),
-        #periodic-table-container div:nth-child(93),
-        #periodic-table-container div:nth-child(94),
-        #periodic-table-container div:nth-child(95),
-        #periodic-table-container div:nth-child(96),
-        #periodic-table-container div:nth-child(97),
-        #periodic-table-container div:nth-child(98),
-        #periodic-table-container div:nth-child(99),
-        #periodic-table-container div:nth-child(100),
-        #periodic-table-container div:nth-child(101),
-        #periodic-table-container div:nth-child(102),
-        #periodic-table-container div:nth-child(103),
-        #periodic-table-container div:nth-child(104),
-        #periodic-table-container div:nth-child(105) {
-            background-color: transparent !important; /* Ensure override */
-            border: none !important; /* Ensure override */
-            pointer-events: none;
-        }
-        .lanthanide-row {
-            grid-column: 3 / 16; /* Span columns 3 to 15 */
-            display: grid;
-            grid-template-columns: repeat(15, minmax(30px, 1fr)); /* 15 columns for lanthanides */
-            gap: 0.1rem;
-            margin-top: 0.5rem;
-        }
-        .actinide-row {
-            grid-column: 3 / 16; /* Span columns 3 to 15 */
-            display: grid;
-            grid-template-columns: repeat(15, minmax(30px, 1fr)); /* 15 columns for actinides */
-            gap: 0.1rem;
-            margin-top: 0.5rem;
-        }
+
     </style>
 </head>
 <body class="bg-black">
@@ -238,24 +169,18 @@
         </div>
 
         <div id="periodic-table-container" class="w-full overflow-auto mb-8 z-0 transform transition duration-500 ease-in-out">
-            <!-- Elements will be populated here by JS -->
         </div>
-        <!-- ADDED IDs to wrapper divs -->
         <div id="lanthanide-row-wrapper" class="flex justify-center">
             <div class="lanthanide-row">
-                <!-- Lanthanides will be populated here by JS -->
             </div>
         </div>
         <div id="actinide-row-wrapper" class="flex justify-center">
             <div class="actinide-row">
-                <!-- Actinides will be populated here by JS -->
             </div>
         </div>
 
-        <!-- This container is now a full-screen overlay, initially hidden -->
-        <!-- Removed Tailwind classes for positioning like relative, z-10, mt-8, etc. as CSS handles it -->
         <div id="element-info-container">
-            <!-- Element info card will be populated here by JS -->
+            <!-- Two cards will be populated here by JS -->
         </div>
     </div>
     <script>
@@ -316,8 +241,8 @@
             { number: 54, symbol: 'Xe', name: 'Xenon', atomicMass: 131.29, category: 'Noble Gas', meltingPoint: -111.8, boilingPoint: -108.09, group: 18, period: 5 },
             { number: 55, symbol: 'Cs', name: 'Cesium', atomicMass: 132.91, category: 'Alkali Metal', meltingPoint: 28.44, boilingPoint: 671, group: 1, period: 6 },
             { number: 56, symbol: 'Ba', name: 'Barium', atomicMass: 137.33, category: 'Alkaline Earth Metal', meltingPoint: 727, boilingPoint: 1897, group: 2, period: 6 },
-            { number: 57, symbol: 'La', name: 'Lanthanum', atomicMass: 138.91, category: 'Lanthanide', meltingPoint: 920, boilingPoint: 3454, group: 3, period: 6 }, // Group 3, Period 6 for main table placeholder
-            { number: 58, symbol: 'Ce', name: 'Cerium', atomicMass: 140.12, category: 'Lanthanide', meltingPoint: 799, boilingPoint: 3443, group: -1, period: 9 }, // period 9 for lanthanide row
+            { number: 57, symbol: 'La', name: 'Lanthanum', atomicMass: 138.91, category: 'Lanthanide', meltingPoint: 920, boilingPoint: 3454, group: 3, period: 6 },
+            { number: 58, symbol: 'Ce', name: 'Cerium', atomicMass: 140.12, category: 'Lanthanide', meltingPoint: 799, boilingPoint: 3443, group: -1, period: 9 },
             { number: 59, symbol: 'Pr', name: 'Praseodymium', atomicMass: 140.91, category: 'Lanthanide', meltingPoint: 935, boilingPoint: 3563, group: -1, period: 9 },
             { number: 60, symbol: 'Nd', name: 'Neodymium', atomicMass: 144.24, category: 'Lanthanide', meltingPoint: 1024, boilingPoint: 3074, group: -1, period: 9 },
             { number: 61, symbol: 'Pm', name: 'Promethium', atomicMass: 145, category: 'Lanthanide', meltingPoint: 1045, boilingPoint: 3000, group: -1, period: 9 },
@@ -330,7 +255,7 @@
             { number: 68, symbol: 'Er', name: 'Erbium', atomicMass: 167.26, category: 'Lanthanide', meltingPoint: 1529, boilingPoint: 2868, group: -1, period: 9 },
             { number: 69, symbol: 'Tm', name: 'Thulium', atomicMass: 168.93, category: 'Lanthanide', meltingPoint: 1545, boilingPoint: 1950, group: -1, period: 9 },
             { number: 70, symbol: 'Yb', name: 'Ytterbium', atomicMass: 173.05, category: 'Lanthanide', meltingPoint: 824, boilingPoint: 1196, group: -1, period: 9 },
-            { number: 71, symbol: 'Lu', name: 'Lutetium', atomicMass: 174.97, category: 'Lanthanide', meltingPoint: 1663, boilingPoint: 3402, group: -1, period: 9 }, // Lu actually in group 3, period 6 in some tables, but for display grouped with Lns
+            { number: 71, symbol: 'Lu', name: 'Lutetium', atomicMass: 174.97, category: 'Lanthanide', meltingPoint: 1663, boilingPoint: 3402, group: -1, period: 9 }, // Lu in Group 3 for some tables
             { number: 72, symbol: 'Hf', name: 'Hafnium', atomicMass: 178.49, category: 'Transition Metal', meltingPoint: 2233, boilingPoint: 4603, group: 4, period: 6 },
             { number: 73, symbol: 'Ta', name: 'Tantalum', atomicMass: 180.95, category: 'Transition Metal', meltingPoint: 3017, boilingPoint: 5458, group: 5, period: 6 },
             { number: 74, symbol: 'W', name: 'Tungsten', atomicMass: 183.84, category: 'Transition Metal', meltingPoint: 3422, boilingPoint: 5555, group: 6, period: 6 },
@@ -343,13 +268,13 @@
             { number: 81, symbol: 'Tl', name: 'Thallium', atomicMass: 204.38, category: 'Post-Transition Metal', meltingPoint: 303.6, boilingPoint: 1473, group: 13, period: 6 },
             { number: 82, symbol: 'Pb', name: 'Lead', atomicMass: 207.2, category: 'Post-Transition Metal', meltingPoint: 327.46, boilingPoint: 1749, group: 14, period: 6 },
             { number: 83, symbol: 'Bi', name: 'Bismuth', atomicMass: 208.98, category: 'Post-Transition Metal', meltingPoint: 271.4, boilingPoint: 1564, group: 15, period: 6 },
-            { number: 84, symbol: 'Po', name: 'Polonium', atomicMass: 209, category: 'Post-Transition Metal', meltingPoint: 254, boilingPoint: 962, group: 16, period: 6 }, // Sometimes Metalloid
-            { number: 85, symbol: 'At', name: 'Astatine', atomicMass: 210, category: 'Metalloid', meltingPoint: 302, boilingPoint: 337, group: 17, period: 6 }, // Sometimes Halogen
+            { number: 84, symbol: 'Po', name: 'Polonium', atomicMass: 209, category: 'Post-Transition Metal', meltingPoint: 254, boilingPoint: 962, group: 16, period: 6 },
+            { number: 85, symbol: 'At', name: 'Astatine', atomicMass: 210, category: 'Metalloid', meltingPoint: 302, boilingPoint: 337, group: 17, period: 6 },
             { number: 86, symbol: 'Rn', name: 'Radon', atomicMass: 222, category: 'Noble Gas', meltingPoint: -71, boilingPoint: -61.7, group: 18, period: 6 },
             { number: 87, symbol: 'Fr', name: 'Francium', atomicMass: 223, category: 'Alkali Metal', meltingPoint: 27, boilingPoint: 677, group: 1, period: 7 },
             { number: 88, symbol: 'Ra', name: 'Radium', atomicMass: 226, category: 'Alkaline Earth Metal', meltingPoint: 700, boilingPoint: 1737, group: 2, period: 7 },
-            { number: 89, symbol: 'Ac', name: 'Actinium', atomicMass: 227, category: 'Actinide', meltingPoint: 1050, boilingPoint: 3200, group: 3, period: 7 }, // Group 3, Period 7 for main table placeholder
-            { number: 90, symbol: 'Th', name: 'Thorium', atomicMass: 232.04, category: 'Actinide', meltingPoint: 1750, boilingPoint: 4788, group: -1, period: 10 }, // period 10 for actinide row
+            { number: 89, symbol: 'Ac', name: 'Actinium', atomicMass: 227, category: 'Actinide', meltingPoint: 1050, boilingPoint: 3200, group: 3, period: 7 },
+            { number: 90, symbol: 'Th', name: 'Thorium', atomicMass: 232.04, category: 'Actinide', meltingPoint: 1750, boilingPoint: 4788, group: -1, period: 10 },
             { number: 91, symbol: 'Pa', name: 'Protactinium', atomicMass: 231.04, category: 'Actinide', meltingPoint: 1568, boilingPoint: 4000, group: -1, period: 10 },
             { number: 92, symbol: 'U', name: 'Uranium', atomicMass: 238.03, category: 'Actinide', meltingPoint: 1132, boilingPoint: 4131, group: -1, period: 10 },
             { number: 93, symbol: 'Np', name: 'Neptunium', atomicMass: 237, category: 'Actinide', meltingPoint: 639, boilingPoint: 4174, group: -1, period: 10 },
@@ -362,7 +287,7 @@
             { number: 100, symbol: 'Fm', name: 'Fermium', atomicMass: 257, category: 'Actinide', meltingPoint: 1527, boilingPoint: null, group: -1, period: 10 },
             { number: 101, symbol: 'Md', name: 'Mendelevium', atomicMass: 258, category: 'Actinide', meltingPoint: 827, boilingPoint: null, group: -1, period: 10 },
             { number: 102, symbol: 'No', name: 'Nobelium', atomicMass: 259, category: 'Actinide', meltingPoint: 800, boilingPoint: null, group: -1, period: 10 },
-            { number: 103, symbol: 'Lr', name: 'Lawrencium', atomicMass: 262, category: 'Actinide', meltingPoint: 1627, boilingPoint: null, group: -1, period: 10 }, // Lr actually in group 3, period 7 in some tables
+            { number: 103, symbol: 'Lr', name: 'Lawrencium', atomicMass: 262, category: 'Actinide', meltingPoint: 1627, boilingPoint: null, group: -1, period: 10 }, // Lr in Group 3 for some tables
             { number: 104, symbol: 'Rf', name: 'Rutherfordium', atomicMass: 261, category: 'Transition Metal', meltingPoint: null, boilingPoint: null, group: 4, period: 7 },
             { number: 105, symbol: 'Db', name: 'Dubnium', atomicMass: 262, category: 'Transition Metal', meltingPoint: null, boilingPoint: null, group: 5, period: 7 },
             { number: 106, symbol: 'Sg', name: 'Seaborgium', atomicMass: 263, category: 'Transition Metal', meltingPoint: null, boilingPoint: null, group: 6, period: 7 },
@@ -384,20 +309,22 @@
         const elementInfoContainer = document.getElementById('element-info-container');
         const lanthanidesContainer = document.querySelector('.lanthanide-row');
         const actinidesContainer = document.querySelector('.actinide-row');
-        // Get new wrapper elements
         const lanthanideRowWrapper = document.getElementById('lanthanide-row-wrapper');
         const actinideRowWrapper = document.getElementById('actinide-row-wrapper');
 
-
-        function createElementTile(element) {
+        function createElementTile(element, isPlaceholder = false) {
             const tile = document.createElement('div');
-            // Added cursor-pointer for better UX
             tile.classList.add('bg-element', 'p-1', 'rounded', 'text-center', 'aspect-square', 'flex', 'flex-col', 'justify-center', 'items-center', 'w-full', 'h-full', 'cursor-pointer');
-            tile.innerHTML = `<span class="bg-element-num">${element.number}</span><span class="bg-element-symbol">${element.symbol}</span>`;
-            tile.addEventListener('click', () => displayElementInfo(element));
+            if (isPlaceholder) {
+                tile.classList.add('italic', 'opacity-80');
+                tile.innerHTML = `<span class="bg-element-num text-xs">${element.number}</span><span class="bg-element-symbol">${element.symbol}</span><span class="text-xs text-slate-300">${element.namePlaceholder || ''}</span>`;
+            } else {
+                tile.innerHTML = `<span class="bg-element-num">${element.number}</span><span class="bg-element-symbol">${element.symbol}</span>`;
+                tile.addEventListener('click', () => displayElementInfo(element));
+            }
 
-            let borderColor = '#6200EA'; // Default
 
+            let borderColor = '#6200EA';
             switch (element.category) {
                 case 'Alkali Metal': borderColor = '#FF5722'; break;
                 case 'Alkaline Earth Metal': borderColor = '#FFC107'; break;
@@ -410,150 +337,168 @@
                 case 'Lanthanide': borderColor = '#795548'; break;
                 case 'Actinide': borderColor = '#5D4037'; break;
             }
-
             tile.style.borderColor = borderColor;
             return tile;
         }
 
         function displayElementInfo(element) {
-            // Blur background elements
             periodicTableContainer.classList.add('blurred');
             lanthanideRowWrapper.classList.add('blurred');
             actinideRowWrapper.classList.add('blurred');
-            
-            // Disable body scroll
             document.body.style.overflowY = 'hidden';
 
-            elementInfoContainer.innerHTML = ''; // Clear previous content
-            elementInfoContainer.style.display = 'flex'; // Show the overlay container
+            elementInfoContainer.innerHTML = `
+                <!-- Large Element Display Tile (Left) -->
+                <div id="large-element-tile-display"
+                     class="bg-element element-tile-glow p-4 md:p-6 rounded-xl flex flex-col text-white relative items-center justify-around"
+                     style="width: clamp(280px, 30vw, 380px); aspect-ratio: 10/12; min-height:330px;">
 
-            const infoCard = document.createElement('div');
-            // Added max-h-[90vh] and overflow-y-auto to the card itself if it's very tall
-            infoCard.classList.add('bg-slate-800', 'p-6', 'sm:p-8', 'rounded-xl', 'shadow-2xl', 'info-card-glow', 'w-full', 'md:w-3/5', 'lg:w-2/3', 'flex-shrink-0', 'flex', 'flex-col', 'transform', 'hover:scale-105', 'transition-transform', 'duration-300', 'max-h-[90vh]', 'overflow-y-auto');
-            infoCard.innerHTML = `
-                <div class="flex justify-between items-start">
-                    <div>
-                        <div class="flex items-baseline gap-3">
-                            <span class="text-xl font-bold text-violet-300">${element.number}</span>
-                            <h3 class="text-2xl sm:text-3xl font-bold text-white">${element.symbol}</h3>
-                            <h4 class="text-2xl sm:text-3xl font-semibold text-violet-300">${element.name}</h4>
+                    <div class="flex justify-between w-full">
+                        <span class="text-xl md:text-2xl font-bold text-violet-300">${element.number}</span>
+                        <span class="text-lg md:text-xl font-medium text-slate-300">${element.atomicMass} u</span>
+                    </div>
+
+                    <div class="flex-grow flex flex-col justify-center items-center my-2 md:my-0">
+                        <h2 class="element-symbol-large text-7xl md:text-8xl lg:text-9xl font-bold" style="text-shadow: 0 0 15px rgba(255,255,255,0.7);">${element.symbol}</h2>
+                    </div>
+
+                    <h3 class="element-name-large text-xl md:text-2xl lg:text-3xl font-semibold text-violet-200 text-center">${element.name}</h3>
+                </div>
+
+                <!-- Detailed Info Card (Right) -->
+                <div id="detailed-info-card"
+                     class="bg-slate-800 p-6 sm:p-8 rounded-xl shadow-2xl info-card-glow flex flex-col max-h-[85vh] md:max-h-[80vh] overflow-y-auto"
+                     style="width: clamp(300px, 45vw, 520px); transform: perspective(800px) rotateY(-10deg);">
+
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <div class="flex items-baseline gap-2 sm:gap-3">
+                                <span class="text-lg sm:text-xl font-bold text-violet-300">${element.number}</span>
+                                <h3 class="text-xl sm:text-2xl md:text-3xl font-bold text-white">${element.symbol}</h3>
+                                <h4 class="text-xl sm:text-2xl md:text-3xl font-semibold text-violet-300">${element.name}</h4>
+                            </div>
+                            <p class="text-xs sm:text-sm text-slate-400 mt-1">${element.category}</p>
                         </div>
-                        <p class="text-sm text-slate-400 mt-1">${element.category}</p>
+                        <button id="close-info-button" class="text-slate-400 hover:text-white text-3xl p-1 -mr-2 -mt-2">×</button>
                     </div>
-                    <button class="text-slate-400 hover:text-white text-2xl close-button p-2 -mr-2 -mt-2">×</button>
-                </div>
-                <div class="my-4 sm:my-6 text-center">
-                    <div class="atom">
-                        <div class="electron-orbit"><div class="electron"></div></div>
-                        <div class="electron-orbit"><div class="electron"></div></div>
-                        <div class="electron-orbit"><div class="electron"></div></div>
-                        <div class="nucleus"></div>
+
+                    <div class="my-2 sm:my-4 text-center">
+                        <div class="atom">
+                            <div class="electron-orbit"><div class="electron"></div></div>
+                            <div class="electron-orbit"><div class="electron"></div></div>
+                            <div class="electron-orbit"><div class="electron"></div></div>
+                            <div class="nucleus"></div>
+                        </div>
                     </div>
-                </div>
-                <p class="text-sm sm:text-base text-slate-300 leading-relaxed mb-6">
-                    ${element.name} is a chemical element with symbol ${element.symbol} and atomic number ${element.number}. 
-                    It belongs to the ${element.category.toLowerCase()} group.
-                    The atomic mass of ${element.name} is ${element.atomicMass} u.
-                    ${element.meltingPoint !== null ? `It has a melting point of ${element.meltingPoint}°C` : 'Its melting point is not well-defined'}.
-                    ${element.boilingPoint !== null ? `and a boiling point of ${element.boilingPoint}°C.` : 'and its boiling point is not well-defined.'}
-                </p>
-                <div class="space-y-3 text-sm sm:text-base mt-auto">
-                    <div class="flex justify-between">
-                        <span class="text-slate-400">Atomic mass:</span>
-                        <span class="font-semibold text-white">${element.atomicMass} u</span>
+
+                    <p class="text-xs sm:text-sm md:text-base text-slate-300 leading-relaxed mb-4 sm:mb-6">
+                        ${element.name} is a chemical element with symbol ${element.symbol} and atomic number ${element.number}.
+                        It belongs to the ${element.category.toLowerCase()} group.
+                        The atomic mass of ${element.name} is ${element.atomicMass} u.
+                        ${element.meltingPoint !== null ? `It has a melting point of ${element.meltingPoint}°C` : 'Its melting point is not well-defined'}.
+                        ${element.boilingPoint !== null ? `and a boiling point of ${element.boilingPoint}°C.` : 'and its boiling point is not well-defined.'}
+                    </p>
+
+                    <div class="space-y-2 sm:space-y-3 text-xs sm:text-sm md:text-base mt-auto">
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">Atomic mass:</span>
+                            <span class="font-semibold text-white">${element.atomicMass} u</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">Melting point:</span>
+                            <span class="font-semibold text-white">${element.meltingPoint !== null ? element.meltingPoint + '°C' : 'N/A'}</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-slate-400">Boiling point:</span>
+                            <span class="font-semibold text-white">${element.boilingPoint !== null ? element.boilingPoint + '°C' : 'N/A'}</span>
+                        </div>
+                         <div class="flex justify-between">
+                            <span class="text-slate-400">Group / Period:</span>
+                            <span class="font-semibold text-white">${element.group > 0 ? element.group : 'N/A'}, ${element.period <= 7 ? element.period : 'N/A'}</span>
+                        </div>
                     </div>
-                    <div class="flex justify-between">
-                        <span class="text-slate-400">Melting point:</span>
-                        <span class="font-semibold text-white">${element.meltingPoint !== null ? element.meltingPoint + '°C' : 'N/A'}</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span class="text-slate-400">Boiling point:</span>
-                        <span class="font-semibold text-white">${element.boilingPoint !== null ? element.boilingPoint + '°C' : 'N/A'}</span>
-                    </div>
-                </div>
-                <div class="text-right text-xs text-slate-500 mt-6">
-                    Group: ${element.group > 0 ? element.group : 'N/A (Lanthanide/Actinide)'}, Period: ${element.period <= 7 ? element.period : 'N/A (Lanthanide/Actinide)'}
                 </div>
             `;
+            elementInfoContainer.style.display = 'flex';
 
-            elementInfoContainer.appendChild(infoCard);
-            const closeButton = infoCard.querySelector('.close-button');
-            closeButton.addEventListener('click', () => {
+            document.getElementById('close-info-button').addEventListener('click', () => {
                 elementInfoContainer.innerHTML = '';
-                elementInfoContainer.style.display = 'none'; // Hide the overlay
-                
-                // Unblur background elements
+                elementInfoContainer.style.display = 'none';
                 periodicTableContainer.classList.remove('blurred');
                 lanthanideRowWrapper.classList.remove('blurred');
                 actinideRowWrapper.classList.remove('blurred');
-
-                // Restore body scroll
                 document.body.style.overflowY = 'auto';
             });
         }
+
 
         function renderPeriodicTable() {
             periodicTableContainer.innerHTML = '';
             lanthanidesContainer.innerHTML = '';
             actinidesContainer.innerHTML = '';
 
-            // Create a map for direct element lookup by number for positioning
-            const elementGrid = Array(10 * 18).fill(null); // Max 10 periods, 18 groups
-
             periodicTableData.forEach(element => {
-                const tile = createElementTile(element);
+                let tile;
                 if (element.category === 'Lanthanide' && element.number >= 58 && element.number <= 71) {
+                    tile = createElementTile(element);
                     lanthanidesContainer.appendChild(tile);
                 } else if (element.category === 'Actinide' && element.number >= 90 && element.number <= 103) {
+                    tile = createElementTile(element);
                     actinidesContainer.appendChild(tile);
-                } else if (element.group > 0 && element.period > 0 && element.period <= 7) { // Main table elements
+                } else if (element.group > 0 && element.period > 0 && element.period <= 7) {
                     const cell = document.createElement('div');
                     cell.style.gridColumnStart = element.group;
                     cell.style.gridRowStart = element.period;
+                    tile = createElementTile(element);
                     cell.appendChild(tile);
                     periodicTableContainer.appendChild(cell);
                 }
             });
-            
-            // Add placeholders for Lanthanide and Actinide series in the main table
-            // These are visual cues often shown as a single or ranged cell.
-            // We'll make a simple placeholder cell.
-            const laPlaceholderData = { number: '57-71', symbol: 'La*', name: 'Lanthanides', category: 'Lanthanide', group: 3, period: 6 };
-            const laPlaceholderTile = createElementTile(laPlaceholderData);
-            laPlaceholderTile.classList.add('italic', 'opacity-80');
-            laPlaceholderTile.onclick = () => lanthanidesContainer.scrollIntoView({ behavior: 'smooth' });
 
-            const acPlaceholderData = { number: '89-103', symbol: 'Ac*', name: 'Actinides', category: 'Actinide', group: 3, period: 7 };
-            const acPlaceholderTile = createElementTile(acPlaceholderData);
-            acPlaceholderTile.classList.add('italic', 'opacity-80');
-            acPlaceholderTile.onclick = () => actinidesContainer.scrollIntoView({ behavior: 'smooth' });
-            
-            // Add placeholders to main table
-            let cellLa = document.createElement('div');
-            cellLa.style.gridColumnStart = 3;
-            cellLa.style.gridRowStart = 6;
-            cellLa.appendChild(laPlaceholderTile);
-            periodicTableContainer.appendChild(cellLa);
-
-            let cellAc = document.createElement('div');
-            cellAc.style.gridColumnStart = 3;
-            cellAc.style.gridRowStart = 7;
-            cellAc.appendChild(acPlaceholderTile);
-            periodicTableContainer.appendChild(cellAc);
+            const laPlaceholderData = { number: '57-71', symbol: 'La*', namePlaceholder: 'Lanthanides', category: 'Lanthanide', group: 3, period: 6 };
+            const laPlaceholderTile = createElementTile(laPlaceholderData, true);
+            laPlaceholderTile.onclick = () => lanthanidesContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            let cellLa = periodicTableContainer.querySelector(`div[style*="grid-column-start: ${laPlaceholderData.group};"][style*="grid-row-start: ${laPlaceholderData.period};"]`);
+            if (!cellLa) { // If La (57) isn't already there, create a cell for the placeholder
+                const actualLa = periodicTableData.find(el => el.number === 57);
+                if(!actualLa){ // Only add placeholder if actual La is not in main table (which it is)
+                    cellLa = document.createElement('div');
+                    cellLa.style.gridColumnStart = laPlaceholderData.group;
+                    cellLa.style.gridRowStart = laPlaceholderData.period;
+                    cellLa.appendChild(laPlaceholderTile);
+                    periodicTableContainer.appendChild(cellLa);
+                }
+            }
 
 
-            // Create empty cells for the gap visually.
-            // The previous nth-child selectors were brittle.
-            // These are now primarily for visual spacing if needed, actual elements define the grid.
-            // If using placeholders like La* and Ac*, explicit empty cells might not be needed
-            // or can be styled differently.
-            // The grid will naturally leave gaps if cells aren't filled.
-            // To explicitly make gaps from column 4 to 18 in rows 6 and 7 (if elements 57-71 and 89-103 were there)
-            // This approach with La* and Ac* in group 3 is more common.
-            // The provided CSS for empty cells using :nth-child might need adjustment if element order changes.
-            // For now, relying on grid layout and explicit placeholder elements.
+            const acPlaceholderData = { number: '89-103', symbol: 'Ac*', namePlaceholder: 'Actinides', category: 'Actinide', group: 3, period: 7 };
+            const acPlaceholderTile = createElementTile(acPlaceholderData, true);
+            acPlaceholderTile.onclick = () => actinidesContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            let cellAc = periodicTableContainer.querySelector(`div[style*="grid-column-start: ${acPlaceholderData.group};"][style*="grid-row-start: ${acPlaceholderData.period};"]`);
+             if (!cellAc) {
+                const actualAc = periodicTableData.find(el => el.number === 89);
+                 if(!actualAc){
+                    cellAc = document.createElement('div');
+                    cellAc.style.gridColumnStart = acPlaceholderData.group;
+                    cellAc.style.gridRowStart = acPlaceholderData.period;
+                    cellAc.appendChild(acPlaceholderTile);
+                    periodicTableContainer.appendChild(cellAc);
+                }
+            }
+            // Create empty cells for the gap visually (groups 4-17 for periods 6 and 7)
+            // This is mostly for any visual styling of empty space, actual element positioning is by grid.
+            for (let period of [6, 7]) {
+                if (period === 6 && periodicTableData.find(el => el.number === 57 && el.group === 3)) continue; // Skip if La is there
+                if (period === 7 && periodicTableData.find(el => el.number === 89 && el.group === 3)) continue; // Skip if Ac is there
+                for (let group = 4; group <= 17; group++) { // Groups 4-17 are empty in these rows
+                    const emptyCell = document.createElement('div');
+                    emptyCell.style.gridColumnStart = group;
+                    emptyCell.style.gridRowStart = period;
+                    emptyCell.style.visibility = 'hidden'; // Make them take space but be invisible
+                    periodicTableContainer.appendChild(emptyCell);
+                }
+            }
         }
-
         renderPeriodicTable();
     </script>
 </body>
