@@ -3,6 +3,14 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
+    return view('welcome');
+});
+
+Route::get('/admin', function () {
+    return view('admin');
+});
+
+Route::get('/api', function () {
     $apiRoutes = [
         ['method' => 'GET',    'url' => '/api/experiments', 'desc' => 'List all experiments'],
         ['method' => 'POST',   'url' => '/api/experiments', 'desc' => 'Create a new experiment'],
@@ -27,8 +35,4 @@ Route::get('/', function () {
         ['method' => 'GET',    'url' => '/api/routes', 'desc' => 'List all API routes'],
     ];
     return response()->view('api-list', ['apiRoutes' => $apiRoutes]);
-});
-
-Route::get('/admin', function () {
-    return view('admin');
 });
