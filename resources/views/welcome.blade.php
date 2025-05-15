@@ -3,7 +3,9 @@
     <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Periodic Table</title>
+    <meta name="description" content="Individual Work - Backend CRUD Project by Afsana Quliyeva. Laravel backend with database, CRUD operations, and interactive periodic table UI.">
+    <meta name="author" content="Afsana Quliyeva">
+    <title>Individual Work | Prabesh Aryal | Backend CRUD Project</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
