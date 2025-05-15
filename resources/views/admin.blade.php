@@ -338,7 +338,7 @@ async function fetchAndRender(entity, containerId, fields, apiUrl) {
                             </div>
                         </td>
                     </tr>`;
-            });
+        });
             
             html += `
                         </tbody>
